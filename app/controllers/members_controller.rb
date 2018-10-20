@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
   def index
-    @members = User.all
+    @members = User.member
   end
 end

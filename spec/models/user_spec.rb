@@ -47,9 +47,17 @@ RSpec.describe User, type: :model do
         expect(user_without_name.display_name).to eq 'no_name@random.com'
       end
     end
+
+    describe 'roles' do 
+      it { is_expected.to respond_to :member! }
+      it { is_expected.to respond_to :member? }
+      it { is_expected.to respond_to :coach? }
+      it { is_expected.to respond_to :coach? }
+    end
   end
 
   describe 'Class methods' do
     it { expect(described_class).to respond_to :member }
   end
+
 end
