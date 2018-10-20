@@ -11,11 +11,11 @@ Feature: Member profiles are displayed on index page
             | email              | first_name | last_name |
             | alumni_1@craft.com | Student    | One       |
             | alumni_2@craft.com | Student    | Two       |
-            | alumni_3@craft.com | Student    | Three     |
+            | alumni_3@craft.com |            |           |
 
 
     Scenario: Member profiles are displayed on index page
         When a visitor visits the site
         Then he should see "Student One" in "members" section
         And he should see "Student Two" in "members" section
-        And he should see "Student Three" in "members" section
+        And he should see "alumni_3@craft.com" in "members" section
