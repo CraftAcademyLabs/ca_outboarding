@@ -1,0 +1,6 @@
+#profile
+    %h1
+        = @member.display_name
+    - if current_user == @member 
+        %div
+            This is your profile as seen by other members and recruiters.
