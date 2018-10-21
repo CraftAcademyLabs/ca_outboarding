@@ -14,12 +14,20 @@ Feature: Member can login and access own profile
 
         And member "alumni_1@craft.com" is logged in
 
-    Scenario: Member profiles are displayed on index page
+    Scenario: Member can access own profile
         When a member visits the site
         And clicks "View profile" on his listing
         Then he should see "Student One"
         And he should see "This is your profile as seen by other members and recruiters." in "profile" section
-        #Then stop
+        Then stop
         But when he returns to the index page
         And clicks "View profile" on "alumni_2@craft.com"
         Then he should not see "This is your profile as seen by other members and recruiters." in "profile" section
+
+    Scenario: Member can edit own profile
+        When a member visits the site
+        And clicks "View profile" on his listing
+        And clicks on "Edit"
+        And he fills in "First name" with "Anders"
+        And he fills in "Last name" with "Karlsson"
+        And clicks on "Update"

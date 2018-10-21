@@ -26,3 +26,11 @@ Given("(he )clicks {string} on {string}") do |element, email|
     click_on element
   end
 end
+
+Given("(he )clicks (on ){string}") do |element|
+  click_on element
+end
+
+Given("(he )fills in {string} with {string}") do |input_field, content|
+  fill_in input_field, with: content
+end
