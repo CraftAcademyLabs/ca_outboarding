@@ -30,3 +30,13 @@ Feature: Member can login and access own profile
         And he fills in "First name" with "Anders"
         And he fills in "Last name" with "Karlsson"
         And clicks on "Update"
+
+    Scenario: Members submits errorous form
+        When a member visits the site
+        And clicks "View profile" on his listing
+        And clicks on "Edit"
+        And he fills in "Email" with ""
+        And clicks on "Update"
+        Then he should not see "We could not save your updates, please try again..." in "profile" section
+
+        
