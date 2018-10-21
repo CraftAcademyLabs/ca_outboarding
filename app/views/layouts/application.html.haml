@@ -12,6 +12,7 @@
   %body.flex.flex-col.h-full
     = render partial: 'partials/header'
     .flex-1
+      = alert || notice
       = yield
     .pin-b
       = render partial: 'partials/footer'
