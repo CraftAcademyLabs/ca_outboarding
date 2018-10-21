@@ -18,7 +18,8 @@ Feature: Member can login and access own profile
         When a member visits the site
         And clicks "View profile" on his listing
         Then he should see "Student One"
-        And he should see "This is your profile as seen by other members and recruiters."
+        And he should see "This is your profile as seen by other members and recruiters." in "profile" section
         But when he returns to the index page
         And clicks "View profile" on "alumni_2@craft.com"
-        Then he should not see "This is your profile as seen by other members and recruiters."
+        Then he should not see "This is your profile as seen by other members and recruiters." in "profile" section
+        

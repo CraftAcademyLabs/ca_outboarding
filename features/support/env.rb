@@ -30,5 +30,13 @@ end
 Capybara.server = :puma
 Capybara.javascript_driver = :chrome
 
+Before do 
+  Warden.test_mode!
+end
+
+After do 
+  Warden.test_reset!
+end
+
 World(FactoryBot::Syntax::Methods)
-World(Devise::Test::IntegrationHelpers)
+World(Warden::Test::Helpers)
