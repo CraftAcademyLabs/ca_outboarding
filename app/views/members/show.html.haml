@@ -4,3 +4,5 @@
     - if current_user == @member 
         %div
             This is your profile as seen by other members and recruiters.
+        %div
+            = link_to 'Edit', edit_member_path(@member), remote: true

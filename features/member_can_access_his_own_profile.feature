@@ -19,7 +19,7 @@ Feature: Member can login and access own profile
         And clicks "View profile" on his listing
         Then he should see "Student One"
         And he should see "This is your profile as seen by other members and recruiters." in "profile" section
+        Then stop
         But when he returns to the index page
         And clicks "View profile" on "alumni_2@craft.com"
         Then he should not see "This is your profile as seen by other members and recruiters." in "profile" section
-        
