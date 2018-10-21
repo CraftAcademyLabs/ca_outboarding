@@ -1,5 +1,5 @@
 !!!
-%html
+%html.h-full
   %head
     %meta{content: 'text/html; charset=UTF-8', http: {equiv: "Content-Type"}}/
     %title Boilerplate
@@ -9,7 +9,9 @@
     = stylesheet_pack_tag 'application'
     = javascript_pack_tag 'application'
 
-  %body
+  %body.flex.flex-col.h-full
     = render partial: 'partials/header'
-    = yield
-    = render partial: 'partials/footer'
+    .flex-1
+      = yield
+    .pin-b
+      = render partial: 'partials/footer'
