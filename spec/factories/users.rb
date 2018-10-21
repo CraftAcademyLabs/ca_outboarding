@@ -1,10 +1,19 @@
 FactoryBot.define do
   factory :user do
-    email { "MyString" }
-    first_name { "MyString" }
-    last_name { "MyString" }
-    factory :member do 
+    password { 'password'}
 
+    factory :member do 
+      email { "student@craft.com" }
+      first_name { "Student" }
+      last_name { "Random" }
+      role { :member }
+    end
+
+    factory :coach do 
+      email { "coach@craft.com" }
+      first_name { "Coach" }
+      last_name { "Random" }
+      role { :coach }
     end
   end
 end
