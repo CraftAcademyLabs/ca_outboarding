@@ -1,10 +1,17 @@
 !!!
-%html
+%html.h-full
   %head
     %meta{content: 'text/html; charset=UTF-8', http: {equiv: "Content-Type"}}/
     %title Boilerplate
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => 'reload'}
     = javascript_include_tag 'application', data: {'turbolinks-track' => 'reload'}
-  %body
-    = yield
+    = stylesheet_pack_tag 'application'
+    = javascript_pack_tag 'application'
+
+  %body.flex.flex-col.h-full
+    = render partial: 'partials/header'
+    .flex-1
+      = yield
+    .pin-b
+      = render partial: 'partials/footer'
