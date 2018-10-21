@@ -31,3 +31,4 @@ Capybara.server = :puma
 Capybara.javascript_driver = :chrome
 
 World(FactoryBot::Syntax::Methods)
+World(Devise::Test::IntegrationHelpers)
