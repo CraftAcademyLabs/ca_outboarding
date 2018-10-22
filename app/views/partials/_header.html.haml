@@ -1,3 +1,15 @@
-%nav.flex.bg-orange-ca-light.p-6
-  %span= image_tag 'ca_basic_logo_320x40.png', alt: 'CA Logo'
+%nav.font-sans.bg-white.text-center.flex.justify-between.my-4.mx-auto.container.overflow-hidden
+  = link_to image_tag('ca_basic_logo_320x40.png', class: 'h-10 sm:h-10 rounded-full'), class: 'block text-left'
+  %ul.text-sm.text-grey-dark.list-reset.flex.items-center
+    %li
+      = link_to 'For Recruiters', '#', class: 'inline-block py-2 px-3 text-grey-darkest hover:text-grey-dark no-underline'
+    %li
+      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} Pricing
+    %li.pr-2
+      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} FAQs
+    %li.pl-2.border-l
+      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} Log In
+    %button.bg-black.hover:bg-grey-darker.text-white.ml-4.py-2.px-3
+      Sign Up
+
   
