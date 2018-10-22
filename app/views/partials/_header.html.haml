@@ -8,11 +8,12 @@
     %li.pr-2
       = link_to 'FAQs' , '#', class: 'ca-header-link'
     - if user_signed_in?
-      = link_to 'Sign Out', destroy_user_session_path, method: :delete
+      %li.ca-button
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete
     - else
       %li.pl-2.border-l.ca-button
         = link_to 'Log In' , new_user_session_path
-      %button.ca-button
+      %li.ca-button
         = link_to 'Sign Up', new_user_registration_path
 
   
