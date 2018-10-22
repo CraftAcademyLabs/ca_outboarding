@@ -1,3 +1,5 @@
 .members
     - @members.each do |member|
-        = member.display_name
+        %div{id: dom_id(member)}
+            = member.display_name
+            = link_to "View profile", member_path(member)

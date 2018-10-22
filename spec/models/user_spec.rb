@@ -2,8 +2,8 @@
 
 RSpec.describe User, type: :model do
   describe 'Factory' do
-    it 'for :user is valid' do
-      expect(create(:user)).to be_valid
+    it 'for :coach is valid' do
+      expect(create(:coach)).to be_valid
     end
 
     it 'for :member is valid' do

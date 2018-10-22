@@ -1,3 +1,19 @@
-%nav.flex.bg-orange-ca-light.p-6
-  %span= image_tag 'ca_basic_logo_320x40.png', alt: 'CA Logo'
+%nav.font-sans.bg-white.text-center.flex.justify-between.my-4.mx-auto.container.overflow-hidden
+  = link_to image_tag('ca_basic_logo_320x40.png', class: 'h-10 sm:h-10 rounded-full'), class: 'block text-left'
+  %ul.text-sm.text-grey-dark.list-reset.flex.items-center
+    %li
+      = link_to 'For Recruiters', '#', class: 'ca-header-link'
+    %li.pr-2
+      = link_to 'Pricing' , '#', class: 'ca-header-link'
+    %li.pr-2
+      = link_to 'FAQs' , '#', class: 'ca-header-link'
+    - if user_signed_in?
+      %li.ca-button
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete
+    - else
+      %li.pl-2.border-l.ca-button
+        = link_to 'Log In' , new_user_session_path
+      %li.ca-button
+        = link_to 'Sign Up', new_user_registration_path
+
   
