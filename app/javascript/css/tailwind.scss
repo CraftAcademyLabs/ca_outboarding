@@ -62,15 +62,22 @@
  * @import "utilities/skew-transforms";
  */
 
- .ca-footer-header {
+.ca-footer-header {
     @apply  inline-block py-2 px-3 text-white uppercase font-medium tracking-wide;
- }
+}
 
- .ca-button {
-     @apply bg-orange-ca text-white ml-4 py-2 px-3;
-     
-     :hover {
-        @apply bg-orange-ca-light;
-     }
- }
+.ca-button {
+    @apply bg-orange-ca text-white ml-4 py-2 px-3;
+}
 
+.ca-button:hover {
+    @apply bg-orange-ca-light;
+}
+
+.ca-header-link {
+    @apply inline-block py-2 px-3 text-grey-darkest no-underline;
+}
+
+.ca-header-link:hover {
+    @apply text-grey-dark;
+}

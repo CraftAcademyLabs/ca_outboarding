@@ -2,13 +2,13 @@
   = link_to image_tag('ca_basic_logo_320x40.png', class: 'h-10 sm:h-10 rounded-full'), class: 'block text-left'
   %ul.text-sm.text-grey-dark.list-reset.flex.items-center
     %li
-      = link_to 'For Recruiters', '#', class: 'inline-block py-2 px-3 text-grey-darkest hover:text-grey-dark no-underline'
-    %li
-      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} Pricing
+      = link_to 'For Recruiters', '#', class: 'ca-header-link'
     %li.pr-2
-      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} FAQs
+      = link_to 'Pricing' , '#', class: `ca-header-link`
+    %li.pr-2
+      = link_to 'FAQs' , '#', class: `ca-header-link`
     %li.pl-2.border-l
-      %a.inline-block.py-2.px-3.text-grey-darkest.hover:text-grey-dark.no-underline{href: "#"} Log In
+      = link_to 'Log In' , new_user_session_path, class: `ca-header-link`
     %button.ca-button
       Sign Up
 
