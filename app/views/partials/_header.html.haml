@@ -7,9 +7,12 @@
       = link_to 'Pricing' , '#', class: `ca-header-link`
     %li.pr-2
       = link_to 'FAQs' , '#', class: `ca-header-link`
-    %li.pl-2.border-l
-      = link_to 'Log In' , new_user_session_path, class: `ca-header-link`
-    %button.ca-button
-      Sign Up
+    - if user_signed_in?
+      = link_to 'Sign Out', destroy_user_session_path, method: :delete
+    - else
+      %li.pl-2.border-l.ca-button
+        = link_to 'Log In' , new_user_session_path
+      %button.ca-button
+        = link_to 'Sign Up', new_user_registration_path
 
   
