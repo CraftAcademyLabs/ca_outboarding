@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require './features/support/omni_auth_fixtures'
 
 RSpec.describe User, type: :model do
   describe 'Factory' do
@@ -64,4 +65,12 @@ RSpec.describe User, type: :model do
     it { expect(described_class).to respond_to :member }
   end
 
+  describe 'OAuth methods' do 
+    let(:auth_response) {OmniAuth::AuthHash.new(OmniAuthFixtures.linkedin_mock)}
+    it "creates an instance from an oauth hash" do
+      create_user = lambda {User.from_omniauth(auth_response)
+      }
+      expect{create_user.call}.to change{User.count}.from(0).to(1)
+    end
+  end
 end
