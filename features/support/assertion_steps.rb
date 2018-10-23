@@ -16,3 +16,11 @@ end
 Then("he should see {string}") do |expected_content|
   expect(page).to have_content expected_content
 end
+
+Then("he should be on his profile page") do
+  expect(current_path).to eq member_path(@user)
+end
+
+Then("he should see {string} image") do |file_name|
+  expect(page).to have_selector "img[src*='#{file_name}']"
+end

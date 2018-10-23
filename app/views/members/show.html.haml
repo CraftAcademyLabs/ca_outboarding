@@ -1,6 +1,7 @@
 #profile
     .flex.mb-4
         %div{class: 'w-1/4'}
+            = image_tag @member.avatar if @member.avatar.attached?
             .text-3xl.font-medium.text-grey-darkest
                 = @member.display_name
             %div{class: "w-full md:w-1/2 px-3 mb-6 md:mb-0 pt-2"}

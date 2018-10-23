@@ -13,7 +13,7 @@ class MembersController < ApplicationController
 
   def update
     if current_user.update_attributes(member_params)
-      redirect_to root_path, notice: 'Your account info was updated'
+      redirect_to member_path(current_user), notice: 'Your account info was updated'
     else
       redirect_back(fallback_location: root_path, notice: 'We could not save your updates, please try again...')
     end
@@ -22,6 +22,6 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:email, :first_name, :last_name)
+    params.require(:member).permit(:email, :first_name, :last_name, :avatar)
   end
 end
