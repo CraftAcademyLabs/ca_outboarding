@@ -6,11 +6,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         set_flash_message(:notice, :success, kind: 'LinkedIn') if is_navigational_format?
     else
         session['devise.linkedin_date'] = request.env['omniauth.auth']
-        redirect_to new_user_registration_path #or should it be url?
+        redirect_to new_user_registration_path
     end
   end
 
-  def cognitive_class
-    # binding.pry
+  def failure
+    redirect_to root_path, notice: 'Could not authenticate you!'
   end
 end
