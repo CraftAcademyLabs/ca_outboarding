@@ -62,22 +62,39 @@
  * @import "utilities/skew-transforms";
  */
 
-.ca-footer-header {
-    @apply  inline-block py-2 px-3 text-white uppercase font-medium tracking-wide;
-}
-
 .ca-button {
-    @apply bg-orange-ca text-white ml-4 py-2 px-3;
+    @apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline ;
 }
 
 .ca-button:hover {
-    @apply bg-orange-ca-light;
+    @apply bg-orange-ca-light ;
 }
 
 .ca-header-link {
-    @apply inline-block py-2 px-3 text-grey-darkest no-underline;
+    @apply inline-block py-2 px-3 text-grey-darkest no-underline ;
 }
 
 .ca-header-link:hover {
-    @apply text-grey-dark;
+    @apply text-grey-light ;
 }
+
+.ca-footer-header {
+    @apply inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide ;
+}
+
+.ca-footer-link {
+    @apply inline-block py-2 px-3 text-white no-underline ;
+}
+
+.ca-footer-link:hover {
+    @apply text-grey-lighter ;
+}
+
+.ca-footer-icon-link {
+    @apply  block flex items-center text-white.hover text-grey-lighter  mr-6 no-underline ;
+}
+
+.ca-footer-copyright {
+    @apply pt-4 mt-4 text-xs text-white border-t border-white text-center ;
+}
+
