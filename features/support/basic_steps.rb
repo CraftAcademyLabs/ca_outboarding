@@ -35,10 +35,6 @@ Given('(he )fills in {string} with {string}') do |input_field, content|
   fill_in input_field, with: content
 end
 
-When("I click {string}") do |element|
-  click_on element
-end
-
 Given("the LinkedIn authentication is not granted") do
   OmniAuth.config.mock_auth[:linkedin] = :invalid_credentials
 end
