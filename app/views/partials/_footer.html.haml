@@ -3,30 +3,32 @@
 		= link_to image_tag('graphic_only_logo_white.png', alt: 'CA logo', class: 'w-32'), root_path, class: 'block mr-4 w-1/2'
 		.flex.text-sm.mt-6.lg:mt-0{class: "w-1/2"}
 			%ul.text-grey-dark.list-reset.font-thin.flex.flex-col.text-left
-				%li.inline-block.py-2.px-3.text-white.uppercase.no-underline.font-medium.tracking-wide Product
+				%li.ca-footer-header Product
 				%li
-					%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Popular
+					%a.ca-footer-link{href: "#"} Popular
 				%li
-					%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Trending
+					%a.ca-footer-link{href: "#"} Trending
 			%ul.text-grey-dark.list-reset.font-thin.flex.flex-col.text-left
-				%li.inline-block.py-2.px-3.text-white.uppercase.no-underline.font-medium.tracking-wide Company
+				%li.ca-footer-header Company
 				%li
-					%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Mission
+					%a.ca-footer-link{href: "#"} Mission
 				%li
-				%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Strategy
+				%a.ca-footer-link{href: "#"} Strategy
 			%ul.text-grey-dark.list-reset.font-thin.flex.flex-col.text-left
-				%li.inline-block.py-2.px-3.text-white.uppercase.no-underline.font-medium.tracking-wide Info
+				%li.ca-footer-header Info
 				%li
-					%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Support
+					%a.ca-footer-link{href: "#"} Support
 				%li
-					%a.inline-block.py-2.px-3.text-grey.hover:text-grey-light.no-underline{href: "#"} Developers
+					%a.ca-footer-link{href: "#"} Developers
 			.text-grey-dark.flex.flex-col
 				.ca-footer-header Follow Us
 				.flex.pl-4.justify-start
-					%a.block.flex.items-center.text-white.hover:text-grey.mr-6.no-underline{href: "#"}
-						%i.fab.fa-github-alt
-					%a.block.flex.items-center.text-white.hover:text-grey.mr-6.no-underline{href: "#"}
-						%i.fab.fa-slack
-					%a.block.flex.items-center.text-white.hover:text-grey.no-underline{href: "#"}
-						%i.fab.fa-twitter
-	.pt-4.mt-4.text-grey-darker.border-t.border-grey-darkest.text-center ©2018 Craft Academy. All rights reserved.
+					%a.ca-footer-icon-link{href: "#"}
+						= icon('fab', 'github-alt')
+					%a.ca-footer-icon-link.mr-6{href: "#"}
+						= icon('fab', 'slack')
+					%a.ca-footer-icon-link.mr-6{href: "#"}
+						= icon('fab', 'twitter')
+					%a.ca-footer-icon-link{href: "#"}
+						= icon('fab', 'instagram')
+	.ca-footer-copyright ©2018 Craft Academy. All rights reserved.
