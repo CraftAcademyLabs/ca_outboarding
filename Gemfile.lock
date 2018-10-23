@@ -178,6 +178,8 @@ GEM
     omniauth (1.8.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
+    omniauth-cognitiveclass (0.4.3)
+      omniauth-oauth2 (~> 1.4)
     omniauth-linkedin-oauth2 (0.2.5)
       omniauth (~> 1.0)
       omniauth-oauth2
@@ -338,6 +340,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.4.1)
   haml-rails (~> 1.0)
   listen (>= 3.0.5, < 3.2)
+  omniauth-cognitiveclass (~> 0.4.0)
   omniauth-linkedin-oauth2
   pg (>= 0.18, < 2.0)
   pry-byebug

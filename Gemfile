@@ -18,6 +18,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'omniauth-linkedin-oauth2'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem "omniauth-cognitiveclass", "~> 0.4.0"
 
 group :development, :test do
   gem 'coveralls', require: false
