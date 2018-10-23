@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-When('(a visitor/member visits the site)(when he returns to the index page)') do
+When('(a visitor/member visits the site)(when he returns to the index page)(I visit the site)') do
   visit root_path
 end
 
@@ -27,7 +27,7 @@ Given("(he )clicks {string} on {string}") do |element, email|
   end
 end
 
-Given("(he )clicks (on ){string}") do |element|
+Given("(he/I )click(s) (on ){string}") do |element|
   click_on element
 end
 
@@ -37,4 +37,8 @@ end
 
 Given("(he/she )attaches {string}") do |file_name|
   attach_file('member_avatar', "#{::Rails.root}/spec/fixtures/dummy_avatar.png")
+end
+
+Then("I should be redirected to index page") do
+  expect(current_path).to eq root_path
 end

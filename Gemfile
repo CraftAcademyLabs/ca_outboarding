@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
+gem 'omniauth-linkedin-oauth2'
 gem 'font-awesome-sass', '~> 5.4.1'
 
 group :development, :test do
