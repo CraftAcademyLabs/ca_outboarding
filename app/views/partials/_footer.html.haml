@@ -24,9 +24,11 @@
 				.ca-footer-header Follow Us
 				.flex.pl-4.justify-start
 					%a.ca-footer-icon-link{href: "#"}
-						%i.fab.fa-github-alt
-					%a.block.flex.items-center.text-white.hover:text-grey-lightest.mr-6.no-underline{href: "#"}
-						%i.fab.fa-slack
-					%a.block.flex.items-center.text-white.hover:text-grey-lightest.no-underline{href: "#"}
-						%i.fab.fa-twitter
+						= icon('fab', 'github-alt')
+					%a.ca-footer-icon-link.mr-6{href: "#"}
+						= icon('fab', 'slack')
+					%a.ca-footer-icon-link.mr-6{href: "#"}
+						= icon('fab', 'twitter')
+					%a.ca-footer-icon-link{href: "#"}
+						= icon('fab', 'instagram')
 	.ca-footer-copyright ©2018 Craft Academy. All rights reserved.
