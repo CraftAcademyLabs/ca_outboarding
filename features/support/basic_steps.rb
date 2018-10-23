@@ -27,7 +27,7 @@ Given("(he )clicks {string} on {string}") do |element, email|
   end
 end
 
-Given("(he )clickI visit the sites (on ){string}") do |element|
+Given("(he )clicks (on ){string}") do |element|
   click_on element
 end
 
