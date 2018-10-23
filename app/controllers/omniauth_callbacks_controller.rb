@@ -9,4 +9,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to new_user_registration_path #or should it be url?
     end
   end
+
+  def cognitive_class
+    # binding.pry
+  end
 end
