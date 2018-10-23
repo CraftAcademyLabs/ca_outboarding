@@ -5,24 +5,24 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:linkedin]
+         :omniauthable, omniauth_providers: [:linkedin, :cognitive_class]
   validates_length_of :first_name, minimum: 3, maximum: 50, allow_blank: true
   validates_length_of :last_name, minimum: 3, maximum: 50, allow_blank: true
 
-  enum role: { member: 0, coach: 1}
+  enum role: { member: 0, coach: 1 }
 
   def full_name
     [first_name, last_name].join(' ') if first_name && last_name
   end
 
   def display_name
-    self.full_name.blank? ? self.email : self.full_name
+    full_name.blank? ? email : full_name
   end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 end
