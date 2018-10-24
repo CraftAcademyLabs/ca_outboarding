@@ -24,7 +24,7 @@ Feature: Member can add avatar to own profile
         And he should see "dummy_avatar.png" image
 
 
-    Scenario: Member tries to add a pdf dodument
+    Scenario: Member tries to add a pdf document
         When a member visits the site
         And clicks "View profile" on his listing
         And clicks on "Edit"

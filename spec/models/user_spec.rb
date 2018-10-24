@@ -10,6 +10,10 @@ RSpec.describe User, type: :model do
     it 'for :member is valid' do
       expect(create(:member)).to be_valid
     end
+
+    it 'for :recruiter is valid' do
+      expect(create(:recruiter)).to be_valid
+    end
   end
   describe 'Database' do
     describe 'table' do
@@ -56,8 +60,10 @@ RSpec.describe User, type: :model do
     describe 'roles' do 
       it { is_expected.to respond_to :member! }
       it { is_expected.to respond_to :member? }
+      it { is_expected.to respond_to :coach! }
       it { is_expected.to respond_to :coach? }
-      it { is_expected.to respond_to :coach? }
+      it { is_expected.to respond_to :recruiter! }
+      it { is_expected.to respond_to :recruiter? }
     end
   end
 

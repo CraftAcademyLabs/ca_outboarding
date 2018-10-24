@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates_length_of :last_name, minimum: 3, maximum: 50, allow_blank: true
   validates :avatar, content_type: {in: ['image/png', 'image/jpg', 'image/jpeg'], message: 'needs to be an image'}
 
-  enum role: { member: 0, coach: 1}
+  enum role: { member: 0, coach: 1, recruiter: 2}
 
   has_one_attached :avatar
 

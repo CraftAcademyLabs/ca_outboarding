@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-When('(a visitor/member visits the site)(when he returns to the index page)(I visit the site)') do
+When('(a visitor/member visits the site)(when he returns to the index page)(I visit the site)(he visits the site)') do
   visit root_path
 end
 
@@ -8,7 +8,7 @@ Then('stop') do
   binding.pry
 end
 
-Given("member {string} is logged in") do |email|
+Given("member/recruiter {string} is logged in") do |email|
   @user = User.find_by_email(email)
   login_as(@user)
 end
