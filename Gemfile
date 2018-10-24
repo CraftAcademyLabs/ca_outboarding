@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
+gem 'active_storage_validations', '~> 0.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'ffi', '~> 1.9.24'
 gem "haml-rails", "~> 1.0"

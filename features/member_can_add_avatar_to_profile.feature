@@ -18,7 +18,16 @@ Feature: Member can add avatar to own profile
         When a member visits the site
         And clicks "View profile" on his listing
         And clicks on "Edit"
-        And attaches "dummy_avatar.png" 
+        And attaches "dummy_avatar.png"
         And clicks on "Update"
         Then he should be on his profile page
         And he should see "dummy_avatar.png" image
+
+
+    Scenario: Member tries to add a pdf dodument
+        When a member visits the site
+        And clicks "View profile" on his listing
+        And clicks on "Edit"
+        And attaches "sample.pdf"
+        And clicks on "Update"
+        Then he should see "We could not save your updates. Avatar needs to be an image"

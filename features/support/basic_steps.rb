@@ -36,7 +36,7 @@ Given('(he )fills in {string} with {string}') do |input_field, content|
 end
 
 Given("(he/she )attaches {string}") do |file_name|
-  attach_file('member_avatar', "#{::Rails.root}/spec/fixtures/dummy_avatar.png")
+  attach_file('member_avatar', "#{::Rails.root}/spec/fixtures/#{file_name}")
 end
 
 Given("the LinkedIn authentication is not granted") do
