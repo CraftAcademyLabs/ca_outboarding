@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   }
   root controller: :members, action: :index
   resources :members, only: [:show, :edit, :update]
+  resources :subscriptions, only: [:new, :create]
 end

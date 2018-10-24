@@ -21,6 +21,10 @@ Then("he should be on his profile page") do
   expect(current_path).to eq member_path(@user)
 end
 
+Then("he should be on the subscription page") do
+  expect(current_path).to eq new_subscription_path
+end
+
 Then("he should see {string} image") do |file_name|
   expect(page).to have_selector "img[src*='#{file_name}']"
 end

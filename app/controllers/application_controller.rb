@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-    before_action :authorize_access
 
+  private
 
-    private
-
-    def authorize_access
-        unless current_user.subscriber?
-            redirect_to new_subscription_path, notice: 'You are not authorized to enter, please purchase a subscription'
-        end
-    end
+  def authorized_to_access? 
+    if current_user 
+      current_user.recruiter? ? current_user.subscriber? : true
+    end 
+  end
 end

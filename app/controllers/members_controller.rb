@@ -1,15 +1,19 @@
+# frozen_string_literal: true
+
 class MembersController < ApplicationController
   def index
-    @members = User.member
+    if authorized_to_access?
+      @members = User.member
+    else
+      redirect_to new_subscription_path, notice: 'You are not authorized to enter, please purchase a subscription'
+    end
   end
 
   def show
     @member = User.find(params[:id])
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     if current_user.update_attributes(member_params)
