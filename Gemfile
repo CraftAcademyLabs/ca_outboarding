@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
+gem 'active_storage_validations', '~> 0.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'ffi', '~> 1.9.24'
 gem "haml-rails", "~> 1.0"
@@ -18,6 +19,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'omniauth-linkedin-oauth2'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   gem 'coveralls', require: false
