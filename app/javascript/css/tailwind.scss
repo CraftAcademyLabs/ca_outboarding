@@ -67,11 +67,16 @@
 
 .ca-button {
     @apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline ;
+    border-radius: .10rem;
 }
 
 
 .ca-button:hover {
     @apply bg-orange-ca-light ;
+}
+
+.ca-button:focus {
+    @apply shadow-outline outline-none ;
 }
 
 .ca-button-transparent {
