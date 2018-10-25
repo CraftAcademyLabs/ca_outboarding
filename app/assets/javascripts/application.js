@@ -98,11 +98,35 @@ const initiateStripe = () => {
     });
 }
 
+const stripeModalToggle = () => {
+    let toggleButton = document.getElementById('subscription-cta')
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            let modalSection = document.getElementById('stripe-modal')
+            modalSection.style.display = ''
+        })
+
+    }
+}
+
+const hideModalListener = (element) => {
+    let elementToObserve = element || 'modal-close-button'
+    let closeButton = document.getElementById(elementToObserve)
+    let modalSection = document.getElementById('stripe-modal')
+
+    if (closeButton && modalSection) {
+        closeButton.addEventListener('click', () => {
+            modalSection.style.display = 'none'
+        })
+    }
+}
+
 document.addEventListener('turbolinks:load', () => {
     App.windowContent = document.getElementById('content')
     let stripeForm = document.getElementById('payment-form')
     if (stripeForm) {
         initiateStripe();
+        stripeModalToggle();
+        hideModalListener('cancel_modal');
     }
-
 })

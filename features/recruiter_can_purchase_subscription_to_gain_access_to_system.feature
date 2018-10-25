@@ -26,6 +26,7 @@ Feature: Recruiter can purchase a subscription to gain access
     Scenario: Recruiter pays up and becomes a subscriber
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
+        And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'valid' credentials
         Then wait 2 seconds
         Then he should be redirected to index page
@@ -34,6 +35,7 @@ Feature: Recruiter can purchase a subscription to gain access
     Scenario: Recruiter fails to pay up and we say "WTF?"
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
+        And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'invalid' credentials
         Then wait 2 seconds
         Then he should be on the subscription page

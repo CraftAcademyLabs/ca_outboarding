@@ -1,20 +1,30 @@
-.container.mx-auto.max-w-xl.py-8.font-normal.leading-normal
+#subscription_page.container.mx-auto.max-w-xl.py-8.font-normal.leading-normal
     %h3.text-2xl You grow Your Business
     %p We grow the next generation of agile talent.
     %p 
         Partner with Craft Academy to boost your recruitment process. By purchasing a subscription you'll get access to 
         full contact information to current learners and alumni.
     .max-w-sm.mt-4.sm:flex
-        = form_with url: subscriptions_path, local: true, method: :post, id: 'payment-form' , class: 'w-full max-w-md' do |form|
-            %div{class: 'flex flex-wrap -mx-3 mb-6'}
-                %div{class: "w-full px-3 mb-6 md:mb-0"}
-                    = form.label 'Credit or debit card', class: 'ca-form-label'
-            %div{class: 'flex flex-wrap -mx-3 mb-6'}
-                %div{class: "w-full px-3 mb-6 md:mb-0"}
-                    #card-element
-            %div{class: 'flex flex-wrap -mx-3 mb-6'}
-                %div{class: "w-full px-3 mb-6 md:mb-0"}
-                    #card-errors{role: "alert"}
-            %div{class: 'flex flex-wrap -mx-3 mb-6'}
-                %div{class: "w-full px-3 mb-6 md:mb-0"}
-                    = form.submit 'Submit Payment', class: 'ca-button'
+        = button_tag 'Yes, I want to purchase a subscription', class: 'ca-button', id: 'subscription-cta'
+
+- content_for :modal_content do
+    = form_with url: subscriptions_path, local: true, method: :post, id: 'payment-form' , class: 'w-full max-w-md' do |form|
+        %div{class: 'flex flex-wrap -mx-3 mb-6'}
+            %div{class: "w-full px-3 mb-6 md:mb-0"}
+                = form.label 'Credit or debit card', class: 'ca-form-label'
+        %div{class: 'flex flex-wrap -mx-3 mb-6'}
+            %div{class: "w-full px-3 mb-6 md:mb-0"}
+                #card-element
+        %div{class: 'flex flex-wrap -mx-3 mb-6'}
+            %div{class: "w-full px-3 mb-6 md:mb-0"}
+                #card-errors{role: "alert"}
+        %div{class: 'flex flex-wrap -mx-3 mb-6'}
+            %div{class: "w-full px-3 mb-6 md:mb-0"}
+                = form.submit 'Submit Payment', class: 'ca-button'
+                = button_tag 'Cancel', id: 'cancel_modal', class: "flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded"
+
+
+%div{id: 'stripe-modal', style: 'display: none;'}
+    = render partial: 'partials/modal'
+
+
