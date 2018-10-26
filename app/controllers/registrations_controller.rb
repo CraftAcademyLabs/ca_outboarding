@@ -4,12 +4,15 @@ class RegistrationsController < Devise::RegistrationsController
   respond_to :js
 
   def new
-    binding.pry
+    if params[:id]
+      @form = 'ca_cred'
+    else
+      @form = 'form'
+    end
     super
   end
 
   def create
-    binding.pry
     build_resource(sign_up_params)
     if resource.save
       flash[:notice] = 'Welcome! You have signed up successfully.'
@@ -19,5 +22,9 @@ class RegistrationsController < Devise::RegistrationsController
       errors = resource.errors.full_messages
       render json: { message: errors }, status: 422
     end
+  end
+
+  def crafted
+    binding.pry
   end
 end
