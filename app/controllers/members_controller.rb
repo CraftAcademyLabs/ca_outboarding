@@ -19,6 +19,10 @@ class MembersController < ApplicationController
     end
   end
 
+  def crafted
+    binding.pry
+  end
+
   private
 
   def member_params
