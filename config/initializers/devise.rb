@@ -156,8 +156,8 @@ Devise.setup do |config|
   # ==> Configuration for :rememberable
 
   config.omniauth :crafted_oauth,
-                  'dhXMqGMbmFWr4HMpuhNaC6aSYLHSH7VnhNZ9a2Sy',
-                  '1o1NkFiSLbI8kYkSICNnUpGP1VoOAPAwwudRRPXrOJ60e521YUBd3nx2YCbaX5FG3lTMH3s79w5dPwFeR7TIuS3y54zvqegfhTxLiVBMXCiihkKzKfiMhhi3fv4jay9P',
+                  Rails.application.credentials.crafted[:client_id],
+                  Rails.application.credentials.crafted[:client_secret],
                   scope: 'read write email profile'
   # The time the user will be remembered without asking for credentials again.
   # config.remember_for = 2.weeks
