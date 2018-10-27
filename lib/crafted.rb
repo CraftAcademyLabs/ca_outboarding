@@ -23,7 +23,7 @@ module OmniAuth
       # additional calls (if the user id is returned with the token
       # or as a URI parameter). This may not be possible with all
       # providers.
-      uid { raw_info['id'] }
+      uid { raw_info['id'] ||= SecureRandom.uuid }
 
       info do
         {
@@ -41,7 +41,8 @@ module OmniAuth
           #   :product => raw_info['product'],
           #   :follower_count => raw_info['followers']['total']
 
-          email: raw_info['email']
+          email: raw_info['email'],
+          first_name: raw_info['name']
         }
       end
 
@@ -52,20 +53,16 @@ module OmniAuth
       end
 
       def image_url
-        if images = raw_info['images']
-          if first = images.first
-            first['url']
-          end
-        end
+        raw_info['profile_image']['image_url_full'] if raw_info['profile_image']['has_image']
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/user/v1/accounts/me').parsed
+        @raw_info ||= access_token.get('/api/user/v1/accounts').parsed.first
       end
 
-      def callback_url
-        full_host + script_name + callback_path
-      end
+    #   def callback_url
+    #     full_host + script_name + callback_path
+    #   end
 
     #   def authorize_params
     #     super.tap do |params|
@@ -85,14 +82,14 @@ module OmniAuth
     #     super
     #   end
 
-    #   def callback_url
-    #     if @authorization_code_from_signed_request_in_cookie
-    #       ''
-    #     else
-    #       # Fixes regression in omniauth-oauth2 v1.4.0 by https://github.com/intridea/omniauth-oauth2/commit/85fdbe117c2a4400d001a6368cc359d88f40abc7
-    #       options[:callback_url] || (full_host + script_name + callback_path)
-    #     end
-    #   end
+      def callback_url
+        if @authorization_code_from_signed_request_in_cookie
+          ''
+        else
+          # Fixes regression in omniauth-oauth2 v1.4.0 by https://github.com/intridea/omniauth-oauth2/commit/85fdbe117c2a4400d001a6368cc359d88f40abc7
+          options[:callback_url] || (full_host + script_name + callback_path)
+        end
+      end
     end
   end
 end
