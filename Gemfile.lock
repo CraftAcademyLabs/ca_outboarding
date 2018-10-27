@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/craftacademy/crafted_oauth.git
+  revision: de8c65fe0ac2998047275700b589d3295b211257
+  branch: master
+  specs:
+    crafted_oauth (0.0.5)
+      omniauth-oauth2 (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -352,6 +360,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   chromedriver-helper
   coveralls
+  crafted_oauth!
   cucumber-rails (~> 1.6)
   database_cleaner
   devise
