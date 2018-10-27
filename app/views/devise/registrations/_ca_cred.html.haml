@@ -1,6 +1,6 @@
 - content_for :modal_content do
     .text-xl{style: 'margin-bottom: 25px;'}
-        Sign Up with you Craft Academy credentials
+        Sign Up with your Craft Academy credentials
     = tag :div, id: dom_id(resource, :errors)
     = form_with(model: resource, as: resource_name, url: crafted_path(resource_name), class: 'w-full max-w-md') do |f|
         %div{class: 'flex flex-wrap -mx-3 mb-6'}
@@ -19,7 +19,7 @@
                 = f.label :remember_me, class: 'ca-form-label'
         %div{class: 'flex flex-wrap -mx-3 mb-6'}
             %div{class: "w-full px-3 mb-6 md:mb-0"}
-                = f.submit 'Sign in', class: 'ca-button'
+                = f.submit 'Create User', class: 'ca-button'
                 = button_tag 'Cancel', id: 'cancel_modal', class: 'ca-button-transparent'
 
 

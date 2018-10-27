@@ -9,6 +9,6 @@ Feature: User can signup using Craft Academy credentials
     And he clicks on "Sign Up with CA"
     And he fills in "Email" with "tochman"
     And he fills in "Password" with "password"
-    When he clicks on "Sign Up"
+    When he clicks on "Create User"
     Then he should be redirected to index page
     And he should see "Successfully signed up from Craft Academy account"
