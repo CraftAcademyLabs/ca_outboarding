@@ -14,6 +14,7 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Before do 
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:linkedin] = OmniAuth::AuthHash.new(OmniAuthFixtures.linkedin_mock)
+  OmniAuth.config.mock_auth[:crafted_oauth] = OmniAuth::AuthHash.new(OmniAuthFixtures.crafted_oauth_mock)
 end
 
 Chromedriver.set_version '2.36' unless ENV['CI'] == 'true'

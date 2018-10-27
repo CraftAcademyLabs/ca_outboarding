@@ -28,3 +28,8 @@ end
 Then("(I/he )should be redirected to index page") do
   expect(current_path).to eq root_path
 end
+
+
+Then("he should be redirected to craft oauth page") do
+  expect(current_path).to eq user_crafted_oauth_omniauth_authorize_path
+end
