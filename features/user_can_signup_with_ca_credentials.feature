@@ -7,5 +7,5 @@ Feature: User can signup using Craft Academy credentials
   Scenario: User signs up using CA credentials
     Given a visitor visits the site 
     When he clicks on "CraftEd"
-    Then he should be redirected to index page
-    And he should see "Successfully signed up from Craft Academy account"
+    Then he should be redirected to craft oauth page
+    And he should see "Successfully authenticated from CraftEd account."
