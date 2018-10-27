@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# require 'crafted_oauth'
+require './lib/crafted'
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -9,7 +12,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '52c48b423af5b1d0649e9b5c8c954d26868777e5e3be13809a535241fffd1aa58656c525d8486fafdc6e7d6bb6ef9e872596465e57567d93109fd5f495cf2f85'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -147,10 +150,16 @@ Devise.setup do |config|
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
   config.omniauth :linkedin,
-    Rails.application.credentials.linkedin[:client_id],
-    Rails.application.credentials.linkedin[:client_secret],
-    :scope => 'r_basicprofile r_emailaddress'
+                  Rails.application.credentials.linkedin[:client_id],
+                  Rails.application.credentials.linkedin[:client_secret],
+                  scope: 'r_basicprofile r_emailaddress'
   # ==> Configuration for :rememberable
+
+  config.omniauth :crafted_oauth,
+                  'dhXMqGMbmFWr4HMpuhNaC6aSYLHSH7VnhNZ9a2Sy',
+                  '1o1NkFiSLbI8kYkSICNnUpGP1VoOAPAwwudRRPXrOJ60e521YUBd3nx2YCbaX5FG3lTMH3s79w5dPwFeR7TIuS3y54zvqegfhTxLiVBMXCiihkKzKfiMhhi3fv4jay9P',
+                  scope: 'profile',
+                  strategy_class: OmniAuth::Strategies::CraftedOauth
   # The time the user will be remembered without asking for credentials again.
   # config.remember_for = 2.weeks
 

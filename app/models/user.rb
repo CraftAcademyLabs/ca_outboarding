@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:linkedin]
+         :omniauthable, omniauth_providers: [:linkedin, :crafted_oauth]
   validates_length_of :first_name, minimum: 3, maximum: 50, allow_blank: true
   validates_length_of :last_name, minimum: 3, maximum: 50, allow_blank: true
   validates :avatar, content_type: {in: ['image/png', 'image/jpg', 'image/jpeg'], message: 'needs to be an image'}
