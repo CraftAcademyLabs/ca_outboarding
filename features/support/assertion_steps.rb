@@ -17,8 +17,17 @@ Then("I/he should see {string}") do |expected_content|
   expect(page).to have_content expected_content
 end
 
+Then("I/he should not see {string}") do |expected_content|
+  expect(page).not_to have_content expected_content
+end
+
 Then("he should be on his profile page") do
   expect(current_path).to eq member_path(@user)
+end
+
+Then("he should be on the profile page of {string}") do |email|
+  member = User.find_by_email(email)
+  expect(current_path).to eq member_path(member)
 end
 
 Then("I/he should be (on the )(redirected to )subscription page") do
@@ -36,4 +45,8 @@ end
 
 Then("he should be redirected to craft oauth page") do
   expect(current_path).to eq user_crafted_oauth_omniauth_authorize_path
+end
+
+Then("he should see a link {string}") do |element_text|
+  expect(page).to have_link element_text
 end
