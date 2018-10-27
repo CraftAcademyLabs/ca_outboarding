@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   }
   root controller: :members, action: :index
   resources :members, only: [:show, :edit, :update]
-  get '/crafted_oauth/callback', controller: :members, action: :crafted
 
 end
