@@ -5,13 +5,13 @@ Feature: User can log in using LinkedIn
 
 Scenario: Visitor clicks on 'Login with LinkedIn' and gets authenticated
     When I visit the site
-    And clicks on "Login with LinkedIn"
+    And clicks on "LinkedIn"
     Then I should be redirected to index page
     And he should see "Successfully authenticated from LinkedIn account"
 
 Scenario: LinkedIn authentication fails
     Given the LinkedIn authentication is not granted
     And I visit the site
-    And clicks on "Login with LinkedIn"
+    And clicks on "LinkedIn"
     Then I should be redirected to index page
     And he should see "Could not authenticate you!"
