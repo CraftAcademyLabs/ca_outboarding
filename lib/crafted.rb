@@ -42,7 +42,8 @@ module OmniAuth
           #   :follower_count => raw_info['followers']['total']
 
           email: raw_info['email'],
-          first_name: raw_info['name']
+          first_name: raw_info['name'],
+          image_url: image_url
         }
       end
 

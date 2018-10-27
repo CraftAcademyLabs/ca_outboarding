@@ -25,9 +25,17 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.first_name = auth.first_name if auth.first_name 
-      user.last_name = auth.last_name if auth.last_name 
+      user.first_name = auth.info.first_name if auth.info.first_name 
+      user.last_name = auth.infolast_name if auth.info.last_name 
       user.password = Devise.friendly_token[0,20]
+      binding.pry
+      user.add_avatar(auth.info.image_url) if auth.info.image_url
     end
   end
+
+  def add_avatar(url)
+    file = open(url)
+    avatar.attach(io: file, filename: "temp.#{file.content_type_parse.first.split("/").last}", content_type: file.content_type_parse.first)
+
+  end 
 end
