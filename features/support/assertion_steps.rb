@@ -13,7 +13,7 @@ Then(/^he should( not)? see "([^"]*)" in "([^"]*)" section$/) do |negate, expect
     end
 end
 
-Then("he should see {string}") do |expected_content|
+Then("I/he should see {string}") do |expected_content|
   expect(page).to have_content expected_content
 end
 
@@ -21,7 +21,7 @@ Then("he should be on his profile page") do
   expect(current_path).to eq member_path(@user)
 end
 
-Then("he should be on the subscription page") do
+Then("I/he should be (on the )(redirected to )subscription page") do
   expect(current_path).to eq new_subscription_path
 end
 

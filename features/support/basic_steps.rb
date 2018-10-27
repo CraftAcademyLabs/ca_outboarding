@@ -43,6 +43,6 @@ Given("the LinkedIn authentication is not granted") do
   OmniAuth.config.mock_auth[:linkedin] = :invalid_credentials
 end
 
-Then("wait {int} second(s)") do |time|
+Then("(I/he )wait {int} second(s)") do |time|
   sleep time
 end
