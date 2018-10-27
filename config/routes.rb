@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     sessions: :sessions
   }
   root controller: :members, action: :index
-  resources :members, only: [:show, :edit, :update]
-  resources :subscriptions, only: [:new, :create]
+  resources :members, only: %i[show edit update]
+  resources :subscriptions, only: %i[new create]
 end
