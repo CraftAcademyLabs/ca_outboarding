@@ -18,6 +18,6 @@
       %li
         = link_to 'LinkedIn', user_linkedin_omniauth_authorize_path, class: 'ca-button'
       %li
-        = link_to 'CraftEd', user_crafted_oauth_omniauth_authorize_path, class: 'ca-button'
+        = link_to 'CraftEd', user_crafted_oauth_omniauth_authorize_path(role: :member), class: 'ca-button'
 
   

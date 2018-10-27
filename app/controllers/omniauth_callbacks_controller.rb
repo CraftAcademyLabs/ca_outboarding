@@ -3,7 +3,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def linkedin
     @user = User.from_omniauth(request.env['omniauth.auth'])
+    params = request.env['omniauth.params']
     if @user.persisted?
+      @user.update_attribute(:role, params['role']) if params['role']
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: 'LinkedIn') if is_navigational_format?
     else
@@ -14,7 +16,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def crafted_oauth
     @user = User.from_omniauth(request.env['omniauth.auth'])
+    params = request.env['omniauth.params']
     if @user.persisted?
+      @user.update_attribute(:role, params['role']) if params['role']
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: 'CraftEd') if is_navigational_format?
     else
