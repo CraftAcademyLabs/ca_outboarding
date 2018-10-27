@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "ca-outboarding",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
