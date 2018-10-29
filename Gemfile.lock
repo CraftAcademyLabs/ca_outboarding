@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/craftacademy/crafted_oauth.git
-  revision: 8b1907f2a4c35d65737c377f3f2ea59ab5240fec
+  revision: a24e6764b84a21f666984aa435a3fd6597794555
   branch: refactorings
   specs:
-    crafted_oauth (0.0.7)
+    crafted_oauth (0.0.8)
       omniauth-oauth2 (~> 1.1)
 
 GEM
