@@ -18,7 +18,7 @@ gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'omniauth-linkedin-oauth2'
-gem 'crafted_oauth', github: 'craftacademy/crafted_oauth', branch: 'master'
+gem 'crafted_oauth', github: 'craftacademy/crafted_oauth', branch: 'refactorings'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "aws-sdk-s3", require: false
 
