@@ -23,7 +23,8 @@ Devise.setup do |config|
   config.omniauth :crafted_oauth,
                   Rails.application.credentials.crafted[:client_id],
                   Rails.application.credentials.crafted[:client_secret],
-                  scope: 'read write email profile'
+                  Rails.application.credentials.crafted[:domain_url],
+                  scope: 'openid email profile'
 
   config.expire_all_remember_me_on_sign_out = true
 
