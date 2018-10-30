@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/craftacademy/crafted_oauth.git
-  revision: de8c65fe0ac2998047275700b589d3295b211257
-  branch: master
+  revision: a24e6764b84a21f666984aa435a3fd6597794555
+  branch: refactorings
   specs:
-    crafted_oauth (0.0.5)
+    crafted_oauth (0.0.8)
       omniauth-oauth2 (~> 1.1)
 
 GEM
@@ -320,7 +320,7 @@ GEM
       sprockets (>= 3.0.0)
     stripe (3.28.0)
       faraday (~> 0.10)
-    stripe-rails (1.5.2)
+    stripe-rails (1.5.3)
       rails (>= 3)
       responders
       stripe (>= 1.36.2)
@@ -399,4 +399,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.6
+   1.16.2
