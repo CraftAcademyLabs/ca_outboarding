@@ -14,7 +14,6 @@
     = render partial: 'partials/header'
     %section#content.flex-1.my-8.container.m-auto.max-w-xl 
       = alert || notice
-      #content
-        = yield
+      = yield
     .pin-b
       = render partial: 'partials/footer'
