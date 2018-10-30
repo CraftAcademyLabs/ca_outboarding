@@ -4,11 +4,15 @@ When('(a visitor/member visits the site)(when he returns to the index page)(I vi
   visit root_path
 end
 
+Given("he visits the admin page") do
+  visit admin_root_path
+end
+
 Then('stop') do 
   binding.pry
 end
 
-Given("member/recruiter {string} is logged in") do |email|
+Given("member/recruiter/coach {string} is logged in") do |email|
   @user = User.find_by_email(email)
   login_as(@user)
 end

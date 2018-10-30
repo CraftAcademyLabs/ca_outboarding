@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users, only: %i[index new create]
+    root controller: :users, action: :index
+  end
   devise_for :users, controllers: {
     omniauth_callbacks: :omniauth_callbacks,
     registrations: :registrations,
