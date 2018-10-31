@@ -122,7 +122,7 @@ const hideModalListener = (element) => {
 }
 
 document.addEventListener('turbolinks:load', () => {
-    App.windowContent = document.getElementById('content')
+    App.windowContent = document.getElementById('added_content')
     let stripeForm = document.getElementById('payment-form')
     if (stripeForm) {
         initiateStripe();

@@ -12,8 +12,10 @@
 
   %body.flex.flex-col.h-full
     = render partial: 'partials/header'
-    %section#content.flex-1.my-8.container.m-auto.max-w-xl 
+    %section.flex-1.my-8.container.m-auto.max-w-xl 
       = alert || notice
-      = yield
+      #content
+        = yield
+      #added_content
     .pin-b
       = render partial: 'partials/footer'

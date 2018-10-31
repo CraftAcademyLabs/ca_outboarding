@@ -45,6 +45,7 @@ Feature: Recruiter can purchase a subscription to gain access
         Then he should be redirected to index page
         And he should see "Welcome as a subscriber"
 
+    @stripe_declined
     Scenario: Recruiter fails to pay up and we say "WTF?"
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
@@ -54,4 +55,4 @@ Feature: Recruiter can purchase a subscription to gain access
         And he fill in and submit the stripe form with 'invalid' credentials
         Then wait 2 seconds
         Then he should be on the subscription page
-        And he should see "Your card was declined"
+        And he should see "The card was declined"
