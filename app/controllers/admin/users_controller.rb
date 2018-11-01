@@ -10,7 +10,6 @@ class Admin::UsersController < ApplicationController
     @message = if user.persisted?
                  'A new user has been created'
                else
-                binding.pry
                  'This did not work'
                end
   end
