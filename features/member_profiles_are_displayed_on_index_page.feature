@@ -8,11 +8,11 @@ Feature: Member profiles are displayed on index page
 
     Background:
         Given the following users exists
-            | email              | first_name | last_name | role   |
-            | alumni_1@craft.com | Student    | One       | member |
-            | alumni_2@craft.com | Student    | Two       | member |
-            | alumni_3@craft.com |            |           | member |
-            | coach_1@craft.com  | Head       | Coach     | coach  |
+            | email              | first_name | last_name | role   | gender |
+            | alumni_1@craft.com | Student    | One       | member | Male   |
+            | alumni_2@craft.com | Student    | Two       | member | Female |
+            | alumni_3@craft.com |            |           | member | Male   |
+            | coach_1@craft.com  | Head       | Coach     | coach  | Female |
 
 
     Scenario: Member profiles are displayed on index page
@@ -20,4 +20,7 @@ Feature: Member profiles are displayed on index page
         Then he should see "Student One" in "members" section
         And he should see "Student Two" in "members" section
         And he should see "alumni_3@craft.com" in "members" section
+        And he should see "Female"
+        And he should see "Male"
         And he should not see "Head Coach" in "members" section
+
