@@ -1,7 +1,9 @@
 @javascript
 Feature: Recruiter can purchase a subscription to gain access
 
-    Feature Description
+    As a recruiter
+    In order to view a detailed profile on a member (previous experience, personal details (but not name, address and email)
+    I would like to become a paying subscriber
 
 
 
@@ -14,7 +16,6 @@ Feature: Recruiter can purchase a subscription to gain access
             | alumni_2@craft.com    | Student     | Two       | member    |            |
             | alumni_3@craft.com    |             |           | member    |            |
             | coach_1@craft.com     | Head        | Coach     | coach     |            |
-
 
     Scenario: Recruiter that has NOT payed up tries to access site and is re-routed to payment form
         Given recruiter "recruiter@random.com" is logged in
