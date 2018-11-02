@@ -8,18 +8,18 @@
         = button_tag 'Yes, I want to purchase a subscription', class: 'ca-button', id: 'subscription-cta'
 
 - content_for :modal_content do
-    = form_with url: subscriptions_path, local: true, method: :post, id: 'payment-form' , class: 'w-full max-w-md' do |form|
-        %div{class: 'flex flex-wrap -mx-3 mb-6'}
-            %div{class: "w-full px-3 mb-6 md:mb-0"}
+    = form_with url: subscriptions_path, local: true, method: :post, id: 'payment-form' , class: 'ca-form' do |form|
+        .ca-field-wrapper
+            .ca-field-full-width
                 = form.label 'Credit or debit card', class: 'ca-form-label'
-        %div{class: 'flex flex-wrap -mx-3 mb-6'}
-            %div{class: "w-full px-3 mb-6 md:mb-0"}
+        .ca-field-wrapper
+            .ca-field-full-width
                 #card-element
-        %div{class: 'flex flex-wrap -mx-3 mb-6'}
-            %div{class: "w-full px-3 mb-6 md:mb-0"}
+        .ca-field-wrapper
+            .ca-field-full-width
                 #card-errors{role: "alert"}
-        %div{class: 'flex flex-wrap -mx-3 mb-6'}
-            %div{class: "w-full px-3 mb-6 md:mb-0"}
+        .ca-field-wrapper
+            .ca-field-full-width
                 = form.submit 'Submit Payment', class: 'ca-button'
                 = button_tag 'Cancel', id: 'cancel_modal', class: "flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded"
 

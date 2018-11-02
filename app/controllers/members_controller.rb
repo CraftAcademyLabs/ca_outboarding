@@ -3,9 +3,6 @@
 class MembersController < ApplicationController
   def index
     @members = User.member
-    # else
-    #   redirect_to new_subscription_path, notice: 'You are not authorized to enter, please purchase a subscription'
-    # end
   end
 
   def show

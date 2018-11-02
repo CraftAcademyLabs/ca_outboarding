@@ -119,6 +119,27 @@
 .ca-footer-copyright {
     @apply pt-4 mt-4 text-xs text-white border-t border-white text-center ;
 }
+// Form elements
+
+.ca-form {
+    @apply w-full max-w-md ;
+}
+
+// Field wrappers
+.ca-field-wrapper {
+    @apply flex flex-wrap -mx-3 mb-6 ;
+}
+
+
+.ca-field-full-width {
+    @apply w-full px-3 mb-6 ;
+
+    @screen md {
+        @apply mb-0 ;
+    }
+}
+
+// Field elements
 
 .ca-form-label {
     @apply block uppercase tracking-wide text-grey-darker text-xs mb-2 ; 
@@ -126,10 +147,14 @@
 
 .ca-form-input-field {
     @apply appearance-none block w-full bg-grey-lighter text-grey-darker rounded py-3 px-4 mb-3 leading-tight ;
+
+    &:focus {
+        @apply outline-none bg-white;
+    }
 }
 
-.ca-form-input-field:focus {
-    @apply outline-none bg-white;
-}
+
+
+
 
 
