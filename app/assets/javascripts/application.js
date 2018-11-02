@@ -28,8 +28,8 @@ const closeModalListener = (element) => {
 }
 
 const stripeTokenHandler = (token) => {
-    var form = document.getElementById('payment-form');
-    var hiddenInput = document.createElement('input');
+    const form = document.getElementById('payment-form');
+    const hiddenInput = document.createElement('input');
     hiddenInput.setAttribute('type', 'hidden');
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
@@ -40,14 +40,14 @@ const stripeTokenHandler = (token) => {
 
 const initiateStripe = () => {
     // Create a Stripe client.
-    var stripe = Stripe('pk_test_QicERB8w3kyqaYW3hUUQylRH');
+    const stripe = Stripe('pk_test_QicERB8w3kyqaYW3hUUQylRH');
 
     // Create an instance of Elements.
-    var elements = stripe.elements();
+    const elements = stripe.elements();
 
     // Custom styling can be passed to options when creating an Element.
     // (Note that this demo uses a wider set of styles than the guide below.)
-    var style = {
+    const style = {
         base: {
             color: '#32325d',
             lineHeight: '18px',
@@ -65,14 +65,14 @@ const initiateStripe = () => {
     };
 
     // Create an instance of the card Element.
-    var card = elements.create('card', { style: style });
+    const card = elements.create('card', { style: style });
 
     // Add an instance of the card Element into the `card-element` <div>.
     card.mount('#card-element');
 
     // Handle real-time validation errors from the card Element.
     card.addEventListener('change', function (event) {
-        var displayError = document.getElementById('card-errors');
+        const displayError = document.getElementById('card-errors');
         if (event.error) {
             displayError.textContent = event.error.message;
         } else {
@@ -81,7 +81,7 @@ const initiateStripe = () => {
     });
 
     // Handle form submission.
-    var form = document.getElementById('payment-form');
+    const form = document.getElementById('payment-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -99,10 +99,10 @@ const initiateStripe = () => {
 }
 
 const stripeModalToggle = () => {
-    let toggleButton = document.getElementById('subscription-cta')
+    const toggleButton = document.getElementById('subscription-cta')
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
-            let modalSection = document.getElementById('stripe-modal')
+            const modalSection = document.getElementById('stripe-modal')
             modalSection.style.display = ''
         })
 
