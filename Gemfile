@@ -21,6 +21,7 @@ gem 'omniauth-linkedin-oauth2'
 gem 'crafted_oauth', github: 'craftacademy/crafted_oauth', branch: 'refactorings'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "aws-sdk-s3", require: false
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'coveralls', require: false
@@ -33,6 +34,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
+
 end
 
 group :development do

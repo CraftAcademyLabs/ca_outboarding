@@ -14,6 +14,8 @@ Feature: Member profiles are displayed on index page
             | alumni_3@craft.com |            |           | member |
             | coach_1@craft.com  | Head       | Coach     | coach  |
 
+        And member "alumni_1@craft.com" is logged in
+
 
     Scenario: Member profiles are displayed on index page
         When a visitor visits the site

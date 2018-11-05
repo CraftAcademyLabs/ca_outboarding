@@ -38,6 +38,11 @@ Capybara.javascript_driver = :chrome
 
 Before do 
   Warden.test_mode!
+  StripeMock.start 
+end
+
+Before '@stripe_declined' do 
+  StripeMock.prepare_card_error(:card_declined)
 end
 
 After do 

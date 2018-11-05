@@ -1,0 +1,4 @@
+var newUserForm = "<%= escape_javascript(render partial: 'new')%>"
+
+App.windowContent.innerHTML = newUserForm;
+closeModalListener('cancel_modal')

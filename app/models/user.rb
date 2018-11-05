@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -9,7 +11,7 @@ class User < ApplicationRecord
   validates :avatar, content_type: { in: ['image/png', 'image/jpg', 'image/jpeg'],
                                      message: 'needs to be an image' }
 
-  enum role: { member: 0, coach: 1 }
+  enum role: { member: 0, coach: 1, recruiter: 2 }
 
   has_one_attached :avatar
 
