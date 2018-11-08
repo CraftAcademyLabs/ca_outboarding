@@ -1,4 +1,4 @@
-RSpec.describe User, type: :model do
+RSpec.describe Resource, type: :model do
   describe 'Database' do
     describe 'table' do
       it { is_expected.to have_db_column :description }
