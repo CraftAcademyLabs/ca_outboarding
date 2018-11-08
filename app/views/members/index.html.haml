@@ -1,8 +1,12 @@
 .members
     - @members.each do |member|
         %div{id: dom_id(member)}
-        .container
-            = member.display_name
-            = member.gender
-            = "Age: #{member.age}"
-            = link_to "View profile", member_path(member)
+            .container
+                .text-2xl.font-medium.text-grey-darkest
+                    = member.display_name
+                %div{class: "w-full md:w-1/2 pb-3 mb-6 md:mb-0"}
+                    = member.gender
+                    = "Age: #{member.age}"
+                %div
+                    = link_to "View profile", member_path(member), class: 'ca-button'
+                %br
