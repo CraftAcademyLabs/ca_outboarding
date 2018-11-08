@@ -17,6 +17,7 @@ class MembersController < ApplicationController
     else
       redirect_back(fallback_location: root_path, notice: "We could not save your updates. #{current_user.errors.full_messages.to_sentence}")
     end
+
   end
 
   private

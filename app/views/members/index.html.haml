@@ -1,6 +1,7 @@
 .members
     - @members.each do |member|
         %div{id: dom_id(member)}
+        .container
             = member.display_name
             = member.gender
             = "Age: #{member.age}"
