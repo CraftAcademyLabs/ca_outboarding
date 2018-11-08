@@ -1,0 +1,30 @@
+#subscription_page.container.mx-auto.max-w-xl.py-8.font-normal.leading-normal
+    %h3.text-2xl You grow Your Business
+    %p We grow the next generation of agile talent.
+    %p 
+        Partner with Craft Academy to boost your recruitment process. By purchasing a subscription you'll get access to 
+        full contact information to current learners and alumni.
+    .max-w-sm.mt-4.sm:flex
+        = button_tag 'Yes, I want to purchase a subscription', class: 'ca-button', id: 'subscription-cta'
+
+- content_for :modal_content do
+    = form_with url: subscriptions_path, local: true, method: :post, id: 'payment-form' , class: 'ca-form' do |form|
+        .ca-field-wrapper
+            .ca-field-full-width
+                = form.label 'Credit or debit card', class: 'ca-form-label'
+        .ca-field-wrapper
+            .ca-field-full-width
+                #card-element
+        .ca-field-wrapper
+            .ca-field-full-width
+                #card-errors{role: "alert"}
+        .ca-field-wrapper
+            .ca-field-full-width
+                = form.submit 'Submit Payment', class: 'ca-button'
+                = button_tag 'Cancel', id: 'cancel_modal', class: "flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded"
+
+
+%div{id: 'stripe-modal', style: 'display: none;'}
+    = render partial: 'partials/modal'
+
+

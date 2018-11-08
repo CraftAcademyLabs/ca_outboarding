@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MembersController < ApplicationController
   def index
     @members = User.member
@@ -7,9 +9,7 @@ class MembersController < ApplicationController
     @member = User.find(params[:id])
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     if current_user.update_attributes(member_params)
