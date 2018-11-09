@@ -27,7 +27,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails'z
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'cucumber-rails', '~> 1.6', require: false
@@ -35,7 +35,6 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
-
 end
 
 group :development do

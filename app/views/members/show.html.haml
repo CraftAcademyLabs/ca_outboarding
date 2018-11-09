@@ -20,3 +20,6 @@
                 .max-w-sm.mt-4.sm:flex
                     = link_to 'Learn more', new_subscription_path, class: 'ca-button'
         
+    .resources
+        -@member.resources.each do |project|
+            .text-3xl.font-medium.text-grey-darkest= project.description
