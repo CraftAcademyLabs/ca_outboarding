@@ -27,7 +27,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails'z
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'cucumber-rails', '~> 1.6', require: false
