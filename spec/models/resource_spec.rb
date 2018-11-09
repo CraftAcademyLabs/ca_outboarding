@@ -12,8 +12,12 @@ RSpec.describe Resource, type: :model do
   end
 
   describe 'Factory' do
-    it 'should be valid' do
-      expect(FactoryBot.create(:resource)).to be_valid
+    it 'for :repo is valid' do
+      expect(create(:repo)).to be_valid
+    end
+
+    it 'for :website is valid' do
+      expect(create(:website)).to be_valid
     end
   end
 

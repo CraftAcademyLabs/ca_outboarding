@@ -8,12 +8,9 @@ end
 
 Given("he has the following projects") do |table|
   table.hashes.each do |project|
-    user = User.last
-    create(:resource,
-           description: project[:description],
-           url: project[:url],
-           type: project[:type],
-           user: user)
+    user = User.find_by(email: project[:user])
+    project.except!("user")
+    create(:resource, project.merge(user: user))
   end
 end
 

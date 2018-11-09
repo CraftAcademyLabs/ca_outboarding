@@ -3,9 +3,6 @@
 FactoryBot.define do
   factory :user do
     password { 'password' }
-    email { 'student@craft.com' }
-
-
 
     factory :member do
       email { 'student@craft.com' }
