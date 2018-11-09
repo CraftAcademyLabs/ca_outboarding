@@ -20,6 +20,5 @@ Feature: Member can show off different projects they have done in their profile
   Scenario: Members previous projects are listed on his/hers profile page
     When a member visits the site
     And he clicks "View profile" on his listing
-    Then open page
     Then he should see "My fizz buzz solution"
     And he should see "My address book"
