@@ -153,7 +153,10 @@
     }
 }
 
-.ca-popup {
+
+// Modal elements
+
+.ca-modal_close {
     background: transparent !important;
     /* border: 3px solid #999; */
     /* border-radius: 50px; */
@@ -170,6 +173,29 @@
     height: 30px;
     text-align: center;
 }
+
+.ca_modal_background {
+    @apply  fixed z-50 pin overflow-auto bg-smoke-dark flex ;
+}
+
+.ca_modal_medium {
+    @apply  fixed shadow-inner max-w-md pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+
+    @screen md {
+        @apply relative justify-center rounded h-auto shadow ;
+    }
+}
+
+// Let's think about how to address this (screen sizes and modal sizes)
+.ca_modal_large {
+    @apply  fixed shadow-inner max-w-lg pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+
+    @screen md {
+        @apply relative justify-center rounded h-auto shadow ;
+    }
+}
+
+
 
 
 
