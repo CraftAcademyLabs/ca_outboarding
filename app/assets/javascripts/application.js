@@ -27,6 +27,11 @@ const closeModalListener = (element) => {
     }
 }
 
+const closeModal = () => {
+    let modalElement = document.getElementById('modal')
+    modalElement.remove()
+}
+
 const stripeTokenHandler = (token) => {
     const form = document.getElementById('payment-form');
     const hiddenInput = document.createElement('input');

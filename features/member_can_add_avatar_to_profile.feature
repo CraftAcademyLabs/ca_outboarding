@@ -20,7 +20,6 @@ Feature: Member can add avatar to own profile
         And clicks on "Edit"
         And attaches "dummy_avatar.png"
         And clicks on "Update"
-        Then he should be on his profile page
         And he should see "dummy_avatar.png" image
 
 

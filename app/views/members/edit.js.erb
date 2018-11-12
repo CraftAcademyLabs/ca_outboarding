@@ -1,2 +1,11 @@
 App.windowContent.insertAdjacentHTML('afterend', '<%= escape_javascript(render partial: 'edit')%>');
 closeModalListener('cancel_modal')
+
+var form = document.getElementById('create_member')
+
+
+form.addEventListener('ajax:error', (event) => {
+    let errorMessageDisplayElement = document.getElementById('error_messages')
+    let message = event.detail[0].message
+    errorMessageDisplayElement.innerHTML = message
+})
