@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require cookies_eu
 
 const closeModalListener = (element) => {
     let elementToObserve = element || 'modal-close-button'
@@ -130,3 +131,4 @@ document.addEventListener('turbolinks:load', () => {
         hideModalListener('cancel_modal');
     }
 })
+
