@@ -21,7 +21,6 @@ Feature: Recruiter can purchase a subscription to gain access
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
         And clicks "View profile" on "alumni_1@craft.com"
-        Then he should be on the profile page of "alumni_1@craft.com"
         And he should see "Student One"
         But he should not see "alumni_1@craft.com"
         And he should see "Purchase a subscription to see full member profile."
@@ -31,8 +30,8 @@ Feature: Recruiter can purchase a subscription to gain access
         Given recruiter "subscriber@random.com" is logged in
         And he visits the site
         And clicks "View profile" on "alumni_1@craft.com"
-        Then he should be on the profile page of "alumni_1@craft.com"
         And he should see "Student One"
+        And he should not see "Purchase a subscription to see full member profile."
         And he should see "alumni_1@craft.com"
 
     Scenario: Recruiter pays up and becomes a subscriber
@@ -42,7 +41,7 @@ Feature: Recruiter can purchase a subscription to gain access
         And clicks "Learn more"
         And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'valid' credentials
-        Then wait 2 seconds
+        Then wait 4 seconds
         Then he should be redirected to index page
         And he should see "Welcome as a subscriber"
 
@@ -54,6 +53,6 @@ Feature: Recruiter can purchase a subscription to gain access
         And clicks "Learn more"
         And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'invalid' credentials
-        Then wait 2 seconds
+        Then wait 4 seconds
         Then he should be on the subscription page
         And he should see "The card was declined"
