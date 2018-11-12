@@ -7,6 +7,8 @@ Then(/^he should( not)? see "([^"]*)" in "([^"]*)" section$/) do |negate, expect
       dom_section = '.members'
     when 'profile'
       dom_section = '#profile'
+    when 'form'
+      dom_section = '#error_messages'
     end
     within(dom_section) do
       expect(page).send(assertion_method, have_content(expected_content)) 

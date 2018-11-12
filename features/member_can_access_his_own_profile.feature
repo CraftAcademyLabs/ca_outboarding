@@ -30,6 +30,7 @@ Feature: Member can login and access own profile
         And he fills in "First name" with "Anders"
         And he fills in "Last name" with "Karlsson"
         And clicks on "Update"
+        Then he should see 'Your account info was updated'
 
     Scenario: Members submits errorous form
         When a member visits the site
@@ -37,6 +38,6 @@ Feature: Member can login and access own profile
         And clicks on "Edit"
         And he fills in "Email" with ""
         And clicks on "Update"
-        Then he should not see "We could not save your updates, please try again..." in "profile" section
+        Then he should not see "We could not save your updates, please try again... Email can't be blank" in "form" section
 
         

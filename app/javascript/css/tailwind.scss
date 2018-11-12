@@ -153,6 +153,24 @@
     }
 }
 
+.ca-popup {
+    background: transparent !important;
+    /* border: 3px solid #999; */
+    /* border-radius: 50px; */
+    cursor: pointer;
+    /* display: inline-block; */
+    font-family: arial;
+    /* font-weight: bold; */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 18px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
 
 
 
