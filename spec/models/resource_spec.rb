@@ -3,7 +3,7 @@ RSpec.describe Resource, type: :model do
     describe 'table' do
       it { is_expected.to have_db_column :description }
       it { is_expected.to have_db_column :url }
-      it { is_expected.to have_db_column :type }
+      it { is_expected.to have_db_column :of_type }
     end
 
     describe 'associations' do
@@ -23,6 +23,6 @@ RSpec.describe Resource, type: :model do
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of :url }
-    it { is_expected.to validate_presence_of :type }
+    it { is_expected.to validate_presence_of :of_type }
   end
 end
