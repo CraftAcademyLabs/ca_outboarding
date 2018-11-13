@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+const addFadeOutAnimation = (element) => {
+    element.classList.add('fadeOut')
+}
+
 const closeModalListener = (element) => {
     let elementToObserve = element || 'modal-close-button'
     let closeButton = document.getElementById(elementToObserve)
@@ -22,14 +26,19 @@ const closeModalListener = (element) => {
 
     if (closeButton && modalElement) {
         closeButton.addEventListener('click', () => {
-            modalElement.remove()
+            // modalElement.remove()
+            closeModal(modalElement)
         })
     }
 }
 
-const closeModal = () => {
-    let modalElement = document.getElementById('modal')
-    modalElement.remove()
+const closeModal = (element) => {
+    let modalElement = element || document.getElementById('modal')
+    addFadeOutAnimation(modalElement)
+    setTimeout( () =>  { 
+        modalElement.remove()
+    }, 2000)
+    
 }
 
 const stripeTokenHandler = (token) => {
