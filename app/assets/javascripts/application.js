@@ -37,8 +37,7 @@ const closeModal = (element) => {
     addFadeOutAnimation(modalElement)
     setTimeout( () =>  { 
         modalElement.remove()
-    }, 2000)
-    
+    }, 2000)  
 }
 
 const stripeTokenHandler = (token) => {
@@ -48,7 +47,6 @@ const stripeTokenHandler = (token) => {
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
-
     form.submit();
 }
 
@@ -98,7 +96,6 @@ const initiateStripe = () => {
     const form = document.getElementById('payment-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-
         stripe.createToken(card).then(function (result) {
             if (result.error) {
                 // Inform the user if there was an error.
@@ -119,7 +116,6 @@ const stripeModalToggle = () => {
             const modalSection = document.getElementById('stripe-modal')
             modalSection.style.display = ''
         })
-
     }
 }
 
