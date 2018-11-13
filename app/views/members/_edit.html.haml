@@ -1,5 +1,6 @@
 - content_for :modal_content do
-    = form_with url: member_path(current_user), scope: :member, method: :patch, local: true, class: 'w-full max-w-md' do |form|
+    = form_with url: member_path(current_user), scope: :member, id: :create_member, method: :patch, class: 'w-full max-w-md' do |form|
+        #error_messages
         %div{class: 'flex flex-wrap -mx-3 mb-6'}
             %div{class: "w-full px-3 mb-6 md:mb-0"}
                 = form.label :email, class: 'block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2'
@@ -18,7 +19,6 @@
         %div{class: 'md:flex md:items-center'}
             %div{class: "w-full md:w-1/2 px-3 mb-6 md:mb-0"}
                 = form.submit 'Update', class: 'shadow bg-orange-ca hover:bg-orange-ca-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded' 
-                = button_tag 'Cancel', id: 'cancel_modal', class: "flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded"
 
 = render partial: 'partials/modal'
 
