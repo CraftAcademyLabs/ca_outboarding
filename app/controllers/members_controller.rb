@@ -17,6 +17,7 @@ class MembersController < ApplicationController
     else
       render json: {message: "We could not save your updates. #{current_user.errors.full_messages.to_sentence}" }, status: 422
     end
+
   end
 
   private
