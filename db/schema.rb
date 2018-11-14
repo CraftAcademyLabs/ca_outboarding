@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_060051) do
+ActiveRecord::Schema.define(version: 2018_11_12_101707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2018_11_05_060051) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "resources", force: :cascade do |t|
+    t.string "description"
+    t.string "url"
+    t.integer "of_type"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_resources_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "first_name"
@@ -49,11 +59,12 @@ ActiveRecord::Schema.define(version: 2018_11_05_060051) do
     t.datetime "remember_created_at"
     t.string "provider"
     t.string "uid"
+    t.boolean "subscriber", default: false
     t.string "gender"
     t.integer "age"
-    t.boolean "subscriber", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "resources", "users"
 end

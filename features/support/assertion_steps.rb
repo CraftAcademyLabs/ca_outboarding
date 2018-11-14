@@ -55,3 +55,12 @@ end
 Then("he should see a link {string}") do |element_text|
   expect(page).to have_link element_text
 end
+
+Then("he should see a link {string} within resource {string}") do |link, resource_description|
+  resource = Resource.find_by(description: resource_description)
+  dom_section = "#resource_#{resource.id}"
+  within(dom_section) do
+    expect(page).to have_content(link)
+  end
+end
+
