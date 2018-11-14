@@ -20,11 +20,12 @@
                         Purchase a subscription to see full member profile.
                     .max-w-sm.mt-4.sm:flex
                         = link_to 'Learn more', new_subscription_path, class: 'ca-button'
-    .resources
         -@member.resources.each do |resource|
             %div{id: dom_id(resource)}
-                .text-3xl.font-medium.text-grey-darkest= resource.description
-                .max-w-sm.mt-4.sm:flex
-                    = link_to "Visit #{resource.of_type}", resource.url
+                .profile-card-grid
+                    %div
+                        .text-l.font-medium.text-grey-darkest= resource.description
+                    %div
+                        %p= link_to "Visit #{resource.of_type}", resource.url, class: 'no-underline text-orange-ca'
 
 = render partial: 'partials/modal'
