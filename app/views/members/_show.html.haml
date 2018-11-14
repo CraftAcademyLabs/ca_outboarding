@@ -22,7 +22,7 @@
                         = link_to 'Learn more', new_subscription_path, class: 'ca-button'
         -@member.resources.each do |resource|
             %div{id: dom_id(resource)}
-                .profile-card-grid
+                .resource-card-grid
                     %div
                         .text-l.font-medium.text-grey-darkest= resource.description
                     %div
