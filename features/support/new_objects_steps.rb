@@ -16,7 +16,10 @@ end
 
 
 Given("he has the following skills listed") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  table.hashes.each do |skill|
+    user = User.find_by(email: skill[:user])
+    skill.except!("user")
+    create(:skill, skill.merge(user: user))
+  end
 end
 

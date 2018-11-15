@@ -13,7 +13,7 @@ Feature: Member profile has tech stack information
   And he has the following skills listed
     | name            | proficiency  | of_type | user               |
     | Javascript      | junior       | Tech    | alumni_1@craft.com |
-    | Ruby on Rails   | advanced     | Tech   | alumni_1@craft.com |
+    | Ruby on Rails   | advanced     | Tech    | alumni_1@craft.com |
     | Team management | intermediate | Soft    | alumni_1@craft.com |
 
 
