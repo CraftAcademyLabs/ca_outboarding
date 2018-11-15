@@ -12,9 +12,9 @@ Feature: Member profile has tech stack information
 
   And he has the following skills listed
     | name            | proficiency  | of_type | user               |
-    | Javascript      | junior       | Tech    | alumni_1@craft.com |
-    | Ruby on Rails   | advanced     | Tech    | alumni_1@craft.com |
-    | Team management | intermediate | Soft    | alumni_1@craft.com |
+    | Javascript      | junior       | tech    | alumni_1@craft.com |
+    | Ruby on Rails   | advanced     | tech    | alumni_1@craft.com |
+    | Team management | intermediate | soft    | alumni_1@craft.com |
 
 
   And member "alumni_1@craft.com" is logged in
