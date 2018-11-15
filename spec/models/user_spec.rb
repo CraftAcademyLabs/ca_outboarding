@@ -30,7 +30,10 @@ RSpec.describe User, type: :model do
 
     describe 'associations' do
       it { is_expected.to have_many :resources }
+      it { is_expected.to have_many :skills }
+
     end
+    
   end
 
   describe 'Instance methods' do
