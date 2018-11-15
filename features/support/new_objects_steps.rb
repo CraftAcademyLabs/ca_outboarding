@@ -14,3 +14,9 @@ Given("he has the following projects") do |table|
   end
 end
 
+
+Given("he has the following skills listed") do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  pending # Write code here that turns the phrase above into concrete actions
+end
+

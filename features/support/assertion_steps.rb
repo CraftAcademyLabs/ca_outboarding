@@ -64,3 +64,12 @@ Then("he should see a link {string} within resource {string}") do |link, resourc
   end
 end
 
+Then("he should see {string} in the {string} skills") do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("he should see {string} within {string}") do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+
