@@ -1,3 +1,4 @@
+@javascript
 Feature: Member profile has tech stack information
 
   As a Member
@@ -22,12 +23,12 @@ Feature: Member profile has tech stack information
   Scenario: Member access his/hers profile and sees their skills being listed
     When a member visits the site
     And he clicks "View profile" on his listing
-    Then he should see "Skills"
-    And he should see "Javascript" in the "Tech" skills
-    And he should see "Ruby on Rails" in the "Tech" skills
-    And he should see "Team management" in the "Soft" skills
+    Then he should see "Javascript" in the "Tech skills"
+    And he should see "Ruby on Rails" in the "Tech skills"
+    And he should see "Team management" in the "Soft skills"
+    Then stop
     And he should see "Proficiency: Junior" within "Javascript"
     And he should see "Proficiency: Advanced" within "Ruby on Rails"
-    And he should see "Proficiency: intermediate" within "Team management"
+    And he should see "Proficiency: Intermediate" within "Team management"
 
 

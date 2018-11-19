@@ -64,12 +64,19 @@ Then("he should see a link {string} within resource {string}") do |link, resourc
   end
 end
 
-Then("he should see {string} in the {string} skills") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("he should see {string} in the {string}") do |name, type|
+  of_type = type.split.first.downcase
+  skill = Skill.find_by(of_type: of_type, name: name)
+  dom_section = "#skill_#{skill.id}"
+  within(dom_section) do
+    expect(page).to have_content(name)
+  end
 end
 
-Then("he should see {string} within {string}") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("he should see {string} within {string}") do |level, name|
+  skill = Skill.find_by(name: name)
+  dom_section = "#skill_#{skill.id}"
+  within(dom_section) do
+    expect(page).to have_content(level)
+  end
 end
-
-
