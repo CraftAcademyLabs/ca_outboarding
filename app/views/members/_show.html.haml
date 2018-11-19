@@ -31,11 +31,13 @@
         -@member.skills.soft.each do |soft_skill|
             %div{id: dom_id(soft_skill)}
                 .text-l.font-medium.text-grey-darkest= soft_skill.name
+                .text-l.font-medium.text-grey-darkest= "Proficiency: #{soft_skill.proficiency.capitalize}"
 
 
         %h2 Tech skills
         -@member.skills.tech.each do |tech_skill|
             %div{id: dom_id(tech_skill)}
                 .text-l.font-medium.text-grey-darkest= tech_skill.name
+                .text-l.font-medium.text-grey-darkest= "Proficiency: #{tech_skill.proficiency.capitalize}"
 
 = render partial: 'partials/modal'

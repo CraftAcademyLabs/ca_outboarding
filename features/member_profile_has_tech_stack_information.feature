@@ -26,7 +26,6 @@ Feature: Member profile has tech stack information
     Then he should see "Javascript" in the "Tech skills"
     And he should see "Ruby on Rails" in the "Tech skills"
     And he should see "Team management" in the "Soft skills"
-    Then stop
     And he should see "Proficiency: Junior" within "Javascript"
     And he should see "Proficiency: Advanced" within "Ruby on Rails"
     And he should see "Proficiency: Intermediate" within "Team management"
