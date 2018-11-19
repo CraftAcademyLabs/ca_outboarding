@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
   enum role: { member: 0, coach: 1, recruiter: 2 }
 
+  update_index('users') { self }
+
+
   has_one_attached :avatar
 
   def full_name
