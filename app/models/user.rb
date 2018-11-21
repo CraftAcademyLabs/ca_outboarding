@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :resources
 
-  update_index('member') { self }
+  update_index('members') { self }
 
   def full_name
     [first_name, last_name].join(' ') if first_name || last_name
