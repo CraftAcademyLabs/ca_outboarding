@@ -1,5 +1,5 @@
-class MembersIndex < Chewy::Index
-    define_type Members.all do
+class MemberIndex < Chewy::Index
+    define_type Member.all do
         field :first_name, :last_name, :age, :gender
     end
 end 
