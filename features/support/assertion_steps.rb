@@ -64,3 +64,8 @@ Then("he should see a link {string} within resource {string}") do |link, resourc
   end
 end
 
+Then("he should see the about us information") do
+  binding.pry
+end
+
+
