@@ -62,7 +62,10 @@
  * @import "utilities/skew-transforms";
  */
 
-
+body {
+    margin: 0;
+    padding: 0;
+}
 
 
 .ca-button {
@@ -201,7 +204,10 @@
     margin-bottom: 10px;
 }
 
-
+// About us page
+.intro {
+    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);
+}
 
 
 

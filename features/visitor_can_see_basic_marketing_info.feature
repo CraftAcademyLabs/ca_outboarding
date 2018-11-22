@@ -5,6 +5,7 @@ Feature: Visitor can see basic marketing information
 
   Scenario: Visitor sees the about us page
     Given a visitor visits the site
-    And he clicks on "About us"
-    Then he should see the about us information
+    And he clicks on "About Us"
+    Then he should be on the about us page
+    And he should see the about us information
 

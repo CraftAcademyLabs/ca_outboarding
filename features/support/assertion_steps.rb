@@ -64,8 +64,12 @@ Then("he should see a link {string} within resource {string}") do |link, resourc
   end
 end
 
+Then("he should be on the about us page") do
+  # expect(page).to be 
+end
+
 Then("he should see the about us information") do
-  binding.pry
+  expect(page).to have_content "With Craft Academy, you'll learn tech and web development in an exciting, fast-paced environment and get help to find your first job in the IT industry or build your own project."
 end
 
 
