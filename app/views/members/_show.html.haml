@@ -28,18 +28,18 @@
                     %div
                         %p= link_to "Visit #{resource.of_type}", resource.url, class: 'no-underline text-orange-ca'
         .skill-grid
-            .soft
-                %h2 Soft skills
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Soft skills
                 -@member.skills.soft.each do |soft_skill|
-                    %div{id: dom_id(soft_skill)}
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(soft_skill)}
                         .text-l.font-medium.text-grey-darkest= soft_skill.name
-                        .text-l.font-medium.text-grey-darkest= "Proficiency: #{soft_skill.proficiency.capitalize}"
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{soft_skill.proficiency.capitalize}"
 
-            .tech
-                %h2 Tech skills
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Tech skills
                 -@member.skills.tech.each do |tech_skill|
-                    %div{id: dom_id(tech_skill)}
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(tech_skill)}
                         .text-l.font-medium.text-grey-darkest= tech_skill.name
-                        .text-l.font-medium.text-grey-darkest= "Proficiency: #{tech_skill.proficiency.capitalize}"
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{tech_skill.proficiency.capitalize}"
 
 = render partial: 'partials/modal'
