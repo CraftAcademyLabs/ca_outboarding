@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :resources
+  has_many :skills
 
   def full_name
     [first_name, last_name].join(' ') if first_name || last_name
