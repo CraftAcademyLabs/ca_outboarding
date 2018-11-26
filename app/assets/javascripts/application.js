@@ -26,7 +26,6 @@ const closeModalListener = (element) => {
 
     if (closeButton && modalElement) {
         closeButton.addEventListener('click', () => {
-            // modalElement.remove()
             closeModal(modalElement)
         })
     }
