@@ -53,7 +53,7 @@ let colors = {
   'smoke-lighter': 'rgba(0, 0, 0, 0.25)',
   'smoke-lightest': 'rgba(0, 0, 0, 0.1)',
 
-  
+
   'transparent': 'transparent',
 
   'black': '#22292f',
@@ -670,6 +670,9 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '48': '12rem',
+    '64': '16rem',
+    '128': '32rem'
   },
 
 

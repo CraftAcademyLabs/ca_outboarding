@@ -206,7 +206,30 @@ body {
 
 // About us page
 .intro {
-    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);
+    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);    
+}
+
+.apply-section {
+    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
+}
+
+.paddingx-content {
+
+
+    @apply px-24;
+    
+    @screen md {
+        @apply px-32;
+    }
+
+    @screen lg {
+        @apply px-48;
+    }
+
+    @screen xl {
+        @apply px-64;
+    }
+
 }
 
 
