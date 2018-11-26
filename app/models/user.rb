@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :resources
+  has_many :skills
 
   update_index('users') { self }
 
