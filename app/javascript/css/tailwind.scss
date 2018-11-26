@@ -195,6 +195,18 @@
     }
 }
 
+.resource-card-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-bottom: 10px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 25px
+}
+
 
 
 

@@ -55,3 +55,28 @@ end
 Then("he should see a link {string}") do |element_text|
   expect(page).to have_link element_text
 end
+
+Then("he should see a link {string} within resource {string}") do |link, resource_description|
+  resource = Resource.find_by(description: resource_description)
+  dom_section = "#resource_#{resource.id}"
+  within(dom_section) do
+    expect(page).to have_content(link)
+  end
+end
+
+Then("he should see {string} in the {string}") do |name, type|
+  of_type = type.split.first.downcase
+  skill = Skill.find_by(of_type: of_type, name: name)
+  dom_section = "#skill_#{skill.id}"
+  within(dom_section) do
+    expect(page).to have_content(name)
+  end
+end
+
+Then("he should see {string} within {string}") do |level, name|
+  skill = Skill.find_by(name: name)
+  dom_section = "#skill_#{skill.id}"
+  within(dom_section) do
+    expect(page).to have_content(level)
+  end
+end

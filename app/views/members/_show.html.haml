@@ -20,5 +20,26 @@
                         Purchase a subscription to see full member profile.
                     .max-w-sm.mt-4.sm:flex
                         = link_to 'Learn more', new_subscription_path, class: 'ca-button'
+        - @member.resources.each do |resource|
+            %div{id: dom_id(resource)}
+                .resource-card-grid
+                    %div
+                        .text-l.font-medium.text-grey-darkest= resource.description
+                    %div
+                        %p= link_to "Visit #{resource.of_type}", resource.url, class: 'no-underline text-orange-ca'
+        .skill-grid
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Soft skills
+                -@member.skills.soft.each do |soft_skill|
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(soft_skill)}
+                        .text-l.font-medium.text-grey-darkest= soft_skill.name
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{soft_skill.proficiency.capitalize}"
+
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Tech skills
+                -@member.skills.tech.each do |tech_skill|
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(tech_skill)}
+                        .text-l.font-medium.text-grey-darkest= tech_skill.name
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{tech_skill.proficiency.capitalize}"
 
 = render partial: 'partials/modal'
