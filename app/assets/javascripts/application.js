@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+const addFadeOutAnimation = (element) => {
+    element.classList.add('fadeOut')
+}
+
 const closeModalListener = (element) => {
     let elementToObserve = element || 'modal-close-button'
     let closeButton = document.getElementById(elementToObserve)
@@ -22,14 +26,17 @@ const closeModalListener = (element) => {
 
     if (closeButton && modalElement) {
         closeButton.addEventListener('click', () => {
-            modalElement.remove()
+            closeModal(modalElement)
         })
     }
 }
 
-const closeModal = () => {
-    let modalElement = document.getElementById('modal')
-    modalElement.remove()
+const closeModal = (element) => {
+    let modalElement = element || document.getElementById('modal')
+    addFadeOutAnimation(modalElement)
+    setTimeout( () =>  { 
+        modalElement.remove()
+    }, 2000)  
 }
 
 const stripeTokenHandler = (token) => {
@@ -39,7 +46,6 @@ const stripeTokenHandler = (token) => {
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
-
     form.submit();
 }
 
@@ -89,7 +95,6 @@ const initiateStripe = () => {
     const form = document.getElementById('payment-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-
         stripe.createToken(card).then(function (result) {
             if (result.error) {
                 // Inform the user if there was an error.
@@ -110,7 +115,6 @@ const stripeModalToggle = () => {
             const modalSection = document.getElementById('stripe-modal')
             modalSection.style.display = ''
         })
-
     }
 }
 
