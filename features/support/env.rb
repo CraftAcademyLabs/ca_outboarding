@@ -4,6 +4,8 @@ Coveralls.wear_merged!('rails')
 require 'cucumber/rails'
 ActionController::Base.allow_rescue = false
 
+require 'elasticsearch/extensions/test/cluster'
+
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
@@ -15,6 +17,7 @@ Before do
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:linkedin] = OmniAuth::AuthHash.new(OmniAuthFixtures.linkedin_mock)
   OmniAuth.config.mock_auth[:crafted_oauth] = OmniAuth::AuthHash.new(OmniAuthFixtures.crafted_oauth_mock)
+  UsersIndex.create! unless UsersIndex.exists?
 end
 
 Chromedriver.set_version '2.36' unless ENV['CI'] == 'true'
@@ -47,6 +50,26 @@ end
 
 After do 
   Warden.test_reset!
+end
+
+#if !ENV['CHEWY']
+  Before do
+    binding.pry
+    Chewy.strategy(:bypass)
+    Elasticsearch::Extensions::Test::Cluster.start(
+      port: 9250,
+      nodes: 1,
+      timeout: 120
+    ) unless Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
+  end
+
+  After do
+    Elasticsearch::Extensions::Test::Cluster.stop(port: 9250)
+  end
+#end
+
+After do
+  UsersIndex.delete! if UsersIndex.exists?
 end
 
 World(FactoryBot::Syntax::Methods)

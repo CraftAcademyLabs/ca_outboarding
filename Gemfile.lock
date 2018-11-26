@@ -54,6 +54,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -143,6 +144,9 @@ GEM
     elasticsearch-api (6.1.0)
       multi_json
     elasticsearch-dsl (0.1.6)
+    elasticsearch-extensions (0.0.30)
+      ansi
+      elasticsearch
     elasticsearch-transport (6.1.0)
       faraday
       multi_json
@@ -391,6 +395,7 @@ DEPENDENCIES
   cucumber-rails (~> 1.6)
   database_cleaner
   devise
+  elasticsearch-extensions
   factory_bot_rails
   faker
   ffi (~> 1.9.24)
