@@ -204,6 +204,13 @@ body {
     margin-bottom: 10px;
 }
 
+.skill-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 25px
+}
+
+
 // About us page
 .intro {
     background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);    
@@ -214,7 +221,6 @@ body {
 }
 
 .paddingx-content {
-
 
     @apply px-24;
     
