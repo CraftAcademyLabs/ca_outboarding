@@ -1,3 +1,15 @@
+%form.w-full.max-w-sm
+    .flex.items-center.border-b.border-b-2.border-teal.py-2
+        = form_with url: root_path, method: :post, local: true do |form|
+        %input.appearance-none.bg-transparent.border-none.w-full.text-grey-darker.mr-3.py-1.px-2.leading-tight.focus:outline-none{"aria-label" => "Full name", placeholder: "Search for members", type: "text"}
+        %button.flex-no-shrink.bg-teal.hover:bg-teal-dark.border-teal.hover:border-teal-dark.text-sm.border-4.text-white.py-1.px-2.rounded{type: "button"}
+        = form.submit 'Search'
+
+
+-#
+-#
+-#
+
 .members.pt-10
     - @members.each do |member|
         %div{id: dom_id(member)}
