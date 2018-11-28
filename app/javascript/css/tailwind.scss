@@ -242,38 +242,28 @@ body {
     border-radius: 2px;
     border: 1px solid #ddd;
     margin-bottom: 1.5rem;
-    overflow: hidden;
+    @apply bg-white w-32;
+    height: 100%;
 }
 
-// .vertical-tabs-container::after {
-//     clear: both;
-//     content: "";
-//     display: table;
-// }
-
-
-// .vertical-tabs-container a {
-//     color: #003340;
-//     text-decoration: none;
-// }
-
-// .vertical-tabs-container .vertical-tabs {
-//     display: none;
-// }
-
 .vertical-tabs-container .vertical-tabs {
-    background-color: #FFFFFF;
+    @apply float-left w-32;
     display: inline;
-    float: left;
-    height: 18.75em;
-    width: 20%;
+    height: inherit;
+
+    button {
+        width: 100%;
+    }
 }
 
 .tablinks.active {
-    background-color: #f7f7f7;
+    @apply bg-grey-lighter;
     margin-right: -1px;
 }
 
+.vertical-tab-content-container {
+    @apply bg-grey-lighter;
+}
 
 
 
