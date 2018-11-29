@@ -14,7 +14,7 @@ Background:
 Scenario: User searches for 'Chris' and gets two hits
     Given recruiter "recruiter@random.com" is logged in
     And I visit the site
-    And fills in 'Search' with 'Chris'
+    And fills in 'Search for members' with 'Chris'
     And I click 'Search'
     Then I should see 'Found 2 matches'
     And I should see 'Christopher'
