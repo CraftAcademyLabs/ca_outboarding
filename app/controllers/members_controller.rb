@@ -17,7 +17,14 @@ class MembersController < ApplicationController
     else
       render json: {message: "We could not save your updates. #{current_user.errors.full_messages.to_sentence}" }, status: 422
     end
+  end
 
+  def search
+    UsersIndex.import
+    query = UsersIndex.query(fuzzy: {title: params[:search]})
+    @hits = query.hits.count
+    @members = query.objects
+    render :search
   end
 
   private
