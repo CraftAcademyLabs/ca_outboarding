@@ -69,7 +69,7 @@ Then("he should be on the about us page") do
 end
 
 Then("he should see the about us information") do
-  expect(page).to have_content "With Craft Academy, you'll learn tech and web development in an exciting, fast-paced environment and get help to find your first job in the IT industry or build your own project."
+  expect(page).to have_content "Craft Academy is a twelve-week intensive course designed to take you from zero to junior programmer. We're a group of dedicated coaches with decades of coding experience."
 end
 
 
