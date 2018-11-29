@@ -36,6 +36,28 @@
  * @import "components/forms";
  */
 
+@font-face {
+font-family: 'gotham-light';
+src: url('//assets.craftacademy.se/fonts/gotham-light-webfont.eot');
+src: url('//assets.craftacademy.se/fonts/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('//assets.craftacademy.se/fonts/gotham-light-webfont.woff') format('woff'),
+    url('//assets.craftacademy.se/fonts/gotham-light-webfont.ttf') format('truetype'),
+    url('//assets.craftacademy.se/fonts/gotham-light-webfont.svg#linea-arrows-10') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'gotham-medium';
+src: url('//assets.craftacademy.se/fonts/gotham-medium-webfont.eot');
+src: url('//assets.craftacademy.se/fonts/gotham-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.woff') format('woff'),
+    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.ttf') format('truetype'),
+    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.svg#linea-arrows-10') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -62,17 +84,19 @@
  * @import "utilities/skew-transforms";
  */
 
+* {
+    font-family: gotham-light;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
-
 .ca-button {
-    @apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline ;
+    @apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline whitespace-no-wrap ;
     border-radius: .10rem;
 }
-
 
 .ca-button:hover {
     @apply bg-orange-ca-light ;
@@ -218,6 +242,18 @@ body {
 
 .apply-section {
     background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
+
+    p {
+        @apply mb-3;
+    }
+    .apply_button {
+        @apply no-underline border py-4 px-6 text-white;
+    
+
+        &:hover {
+            @apply opacity-75 ;
+        }
+    }
 }
 
 .paddingx-content {
@@ -238,27 +274,25 @@ body {
 
 }
 
+
 .vertical-tabs-container {
-    border-radius: 2px;
-    border: 1px solid #ddd;
-    margin-bottom: 1.5rem;
-    @apply bg-white w-32;
-    height: 100%;
+    @apply bg-white w-32 rounded-sm border border-solid border-grey-light-shade;
 }
 
 .vertical-tabs-container .vertical-tabs {
     @apply float-left w-32;
-    display: inline;
-    height: inherit;
+
+    &:hover {
+        @apply opacity-75 ;
+    }
 
     button {
-        width: 100%;
+        @apply .w-full py-2;
     }
 }
 
 .tablinks.active {
     @apply bg-grey-lighter;
-    margin-right: -1px;
 }
 
 .vertical-tab-content-container {
