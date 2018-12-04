@@ -154,6 +154,62 @@
 }
 
 
+// Modal elements
+
+.ca-modal_close {
+    background: transparent !important;
+    /* border: 3px solid #999; */
+    /* border-radius: 50px; */
+    cursor: pointer;
+    /* display: inline-block; */
+    font-family: arial;
+    /* font-weight: bold; */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 18px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.ca_modal_background {
+    @apply  fixed z-50 pin overflow-auto bg-smoke-dark flex ;
+}
+
+.ca_modal_medium {
+    @apply  fixed shadow-inner max-w-md pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+
+    @screen md {
+        @apply relative justify-center rounded h-auto shadow ;
+    }
+}
+
+// Let's think about how to address this (screen sizes and modal sizes)
+.ca_modal_large {
+    @apply  fixed shadow-inner max-w-lg pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+
+    @screen md {
+        @apply relative justify-center rounded h-auto shadow ;
+    }
+}
+
+.resource-card-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-bottom: 10px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 25px
+}
+
+
+
+
 
 
 

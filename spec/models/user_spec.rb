@@ -15,6 +15,7 @@ RSpec.describe User, type: :model do
       expect(create(:recruiter)).to be_valid
     end
   end
+
   describe 'Database' do
     describe 'table' do
       it { is_expected.to have_db_column :email }
@@ -23,11 +24,16 @@ RSpec.describe User, type: :model do
       it { is_expected.to have_db_column :role }
       it { is_expected.to have_db_column :uid }
       it { is_expected.to have_db_column :provider }
-
+      it { is_expected.to have_db_column :gender }
+      it { is_expected.to have_db_column :age }
     end
 
     describe 'associations' do
+      it { is_expected.to have_many :resources }
+      it { is_expected.to have_many :skills }
+
     end
+    
   end
 
   describe 'Instance methods' do

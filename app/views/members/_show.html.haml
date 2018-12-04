@@ -1,0 +1,45 @@
+- content_for :modal_content do
+    #profile
+        .flex.mb-4
+            %div{class: 'w-1/4'}
+                = image_tag member.avatar if member.avatar.attached?
+                .text-3xl.font-medium.text-grey-darkest
+                    = member.display_name
+                - if authorized_to_access?
+                    .text-base.font-medium.text-grey-darkest
+                        = member.email
+                - if current_user == member
+                    %div{class: "w-full md:w-1/2 px-3 mb-6 md:mb-0 pt-2"}
+                        = link_to 'Edit', edit_member_path(member), remote: true, class: 'ca-button', onclick: 'closeModal();'
+            %div{class: 'w-3/4'}
+                - if current_user == member 
+                    .text-xl.text-grey-dark.font-light
+                        This is your profile as seen by other members and recruiters.
+                - unless authorized_to_access?
+                    .text-xl.text-grey-dark.font-light
+                        Purchase a subscription to see full member profile.
+                    .max-w-sm.mt-4.sm:flex
+                        = link_to 'Learn more', new_subscription_path, class: 'ca-button'
+        - @member.resources.each do |resource|
+            %div{id: dom_id(resource)}
+                .resource-card-grid
+                    %div
+                        .text-l.font-medium.text-grey-darkest= resource.description
+                    %div
+                        %p= link_to "Visit #{resource.of_type}", resource.url, class: 'no-underline text-orange-ca'
+        .skill-grid
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Soft skills
+                -@member.skills.soft.each do |soft_skill|
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(soft_skill)}
+                        .text-l.font-medium.text-grey-darkest= soft_skill.name
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{soft_skill.proficiency.capitalize}"
+
+            .rounded-b-none
+                .text-2xl.text-grey-darkest Tech skills
+                -@member.skills.tech.each do |tech_skill|
+                    .max-w-sm.rounded.overflow-hidden.m-4{id: dom_id(tech_skill)}
+                        .text-l.font-medium.text-grey-darkest= tech_skill.name
+                        .text-l.font-medium.text-grey-dark= "Proficiency: #{tech_skill.proficiency.capitalize}"
+
+= render partial: 'partials/modal'

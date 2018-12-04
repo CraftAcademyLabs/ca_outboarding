@@ -15,8 +15,9 @@ class MembersController < ApplicationController
     if current_user.update_attributes(member_params)
       redirect_to member_path(current_user), notice: 'Your account info was updated'
     else
-      redirect_back(fallback_location: root_path, notice: "We could not save your updates. #{current_user.errors.full_messages.to_sentence}")
+      render json: {message: "We could not save your updates. #{current_user.errors.full_messages.to_sentence}" }, status: 422
     end
+
   end
 
   private
