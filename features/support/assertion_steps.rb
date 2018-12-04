@@ -64,13 +64,19 @@ Then("he should see a link {string} within resource {string}") do |link, resourc
   end
 end
 
-Then("he should be on the about us page") do
-  # expect(page).to be 
+Then("he should be on the {string} page") do |page|
+  expect(current_path).to eq page_path(page)
 end
 
 Then("he should see the about us information") do
   expect(page).to have_content "Craft Academy is a twelve-week intensive course designed to take you from zero to junior programmer. We're a group of dedicated coaches with decades of coding experience."
 end
+
+Then("he should see the employers information") do
+  expect(page).to have_content "We strive to train junior developers who will seamlessly fit into a workplace, ready to hit the ground running and dive into real projects. We train not just competent coders, with a wide range of skills, but teammates, problem-solvers and leaders."
+end
+
+
 
 
 Then("he should see {string} in the {string}") do |name, type|

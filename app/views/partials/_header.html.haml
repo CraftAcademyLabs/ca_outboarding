@@ -9,6 +9,8 @@
       = link_to 'FAQs' , '#', class: 'ca-header-link'
     %li.pr-2
       = link_to 'About Us' , page_path('about'), class: 'ca-header-link'
+    %li.pr-2
+      = link_to 'Employers' , page_path('employers'), class: 'ca-header-link'
     - if user_signed_in?
       %li
         = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'ca-button'

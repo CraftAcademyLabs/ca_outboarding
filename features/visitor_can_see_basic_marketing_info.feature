@@ -6,6 +6,12 @@ Feature: Visitor can see basic marketing information
   Scenario: Visitor sees the about us page
     Given a visitor visits the site
     And he clicks on "About Us"
-    Then he should be on the about us page
+    Then he should be on the "about" page
     And he should see the about us information
+
+  Scenario: Visitor sees the employers page
+    Given a visitor visits the site
+    And he clicks on "Employers"
+    Then he should be on the "employers" page
+    And he should see the employers information
 

@@ -40,9 +40,9 @@
 font-family: 'gotham-light';
 src: url('//assets.craftacademy.se/fonts/gotham-light-webfont.eot');
 src: url('//assets.craftacademy.se/fonts/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
-    url('//assets.craftacademy.se/fonts/gotham-light-webfont.woff') format('woff'),
-    url('//assets.craftacademy.se/fonts/gotham-light-webfont.ttf') format('truetype'),
-    url('//assets.craftacademy.se/fonts/gotham-light-webfont.svg#linea-arrows-10') format('svg');
+	url('//assets.craftacademy.se/fonts/gotham-light-webfont.woff') format('woff'),
+	url('//assets.craftacademy.se/fonts/gotham-light-webfont.ttf') format('truetype'),
+	url('//assets.craftacademy.se/fonts/gotham-light-webfont.svg#linea-arrows-10') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -51,9 +51,9 @@ font-style: normal;
 font-family: 'gotham-medium';
 src: url('//assets.craftacademy.se/fonts/gotham-medium-webfont.eot');
 src: url('//assets.craftacademy.se/fonts/gotham-medium-webfont.eot?#iefix') format('embedded-opentype'),
-    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.woff') format('woff'),
-    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.ttf') format('truetype'),
-    url('//assets.craftacademy.se/fonts/gotham-medium-webfont.svg#linea-arrows-10') format('svg');
+	url('//assets.craftacademy.se/fonts/gotham-medium-webfont.woff') format('woff'),
+	url('//assets.craftacademy.se/fonts/gotham-medium-webfont.ttf') format('truetype'),
+	url('//assets.craftacademy.se/fonts/gotham-medium-webfont.svg#linea-arrows-10') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -85,221 +85,290 @@ font-style: normal;
  */
 
 * {
-    font-family: gotham-light;
+	font-family: gotham-light;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .ca-button {
-    @apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline whitespace-no-wrap ;
-    border-radius: .10rem;
+	@apply bg-orange-ca text-white ml-4 py-2 px-3 no-underline whitespace-no-wrap ;
+	border-radius: .10rem;
 }
 
 .ca-button:hover {
-    @apply bg-orange-ca-light ;
+	@apply bg-orange-ca-light ;
 }
 
 .ca-button:focus {
-    @apply shadow-outline outline-none ;
+	@apply shadow-outline outline-none ;
 }
 
 .ca-button-transparent {
-    @apply flex-no-shrink border-transparent border-4 text-grey text-sm py-1 px-2 rounded ;
+	@apply flex-no-shrink border-transparent border-4 text-grey text-sm py-1 px-2 rounded ;
 }
 
 .ca-button-transparent:hover {
-    @apply text-grey-darker ;
+	@apply text-grey-darker ;
 }
 
 .ca-header-link {
-    @apply inline-block py-2 px-3 text-grey-darkest no-underline ;
+	@apply inline-block py-2 px-3 text-grey-darkest no-underline ;
 }
 
 .ca-header-link:hover {
-    @apply text-grey-darker ;
+	@apply text-grey-darker ;
 }
 
 .ca-footer-header {
-    @apply inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide ;
+	@apply inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide ;
 }
 
 .ca-footer-link {
-    @apply inline-block py-2 px-3 text-white no-underline ;
+	@apply inline-block py-2 px-3 text-white no-underline ;
 }
 
 .ca-footer-link:hover {
-    @apply text-grey-lighter ;
+	@apply text-grey-lighter ;
 }
 
 .ca-footer-icon-link {
-    @apply  block flex items-center text-white mr-6 no-underline ;
+	@apply  block flex items-center text-white mr-6 no-underline ;
 }
 
 .ca-footer-icon-link:hover {
-    @apply  text-grey-lighter ;
+	@apply  text-grey-lighter ;
 }
 
 
 .ca-footer-copyright {
-    @apply pt-4 mt-4 text-xs text-white border-t border-white text-center ;
+	@apply pt-4 mt-4 text-xs text-white border-t border-white text-center ;
 }
 // Form elements
 
 .ca-form {
-    @apply w-full max-w-md ;
+	@apply w-full max-w-md ;
 }
 
 // Field wrappers
 .ca-field-wrapper {
-    @apply flex flex-wrap -mx-3 mb-6 ;
+	@apply flex flex-wrap -mx-3 mb-6 ;
 }
 
 
 .ca-field-full-width {
-    @apply w-full px-3 mb-6 ;
+	@apply w-full px-3 mb-6 ;
 
-    @screen md {
-        @apply mb-0 ;
-    }
+	@screen md {
+		@apply mb-0 ;
+	}
 }
 
 // Field elements
 
 .ca-form-label {
-    @apply block uppercase tracking-wide text-grey-darker text-xs mb-2 ; 
+	@apply block uppercase tracking-wide text-grey-darker text-xs mb-2 ; 
 }
 
 .ca-form-input-field {
-    @apply appearance-none block w-full bg-grey-lighter text-grey-darker rounded py-3 px-4 mb-3 leading-tight ;
+	@apply appearance-none block w-full bg-grey-lighter text-grey-darker rounded py-3 px-4 mb-3 leading-tight ;
 
-    &:focus {
-        @apply outline-none bg-white;
-    }
+	&:focus {
+		@apply outline-none bg-white;
+	}
 }
 
 
 // Modal elements
 
 .ca-modal_close {
-    background: transparent !important;
-    /* border: 3px solid #999; */
-    /* border-radius: 50px; */
-    cursor: pointer;
-    /* display: inline-block; */
-    font-family: arial;
-    /* font-weight: bold; */
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    font-size: 18px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
+	background: transparent !important;
+	/* border: 3px solid #999; */
+	/* border-radius: 50px; */
+	cursor: pointer;
+	/* display: inline-block; */
+	font-family: arial;
+	/* font-weight: bold; */
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	font-size: 18px;
+	line-height: 30px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
 }
 
 .ca_modal_background {
-    @apply  fixed z-50 pin overflow-auto bg-smoke-dark flex ;
+	@apply  fixed z-50 pin overflow-auto bg-smoke-dark flex ;
 }
 
 .ca_modal_medium {
-    @apply  fixed shadow-inner max-w-md pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+	@apply  fixed shadow-inner max-w-md pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
 
-    @screen md {
-        @apply relative justify-center rounded h-auto shadow ;
-    }
+	@screen md {
+		@apply relative justify-center rounded h-auto shadow ;
+	}
 }
 
 // Let's think about how to address this (screen sizes and modal sizes)
 .ca_modal_large {
-    @apply  fixed shadow-inner max-w-lg pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
+	@apply  fixed shadow-inner max-w-lg pin-b pin-x align-top m-auto justify-end p-8 bg-white w-full flex flex-col;
 
-    @screen md {
-        @apply relative justify-center rounded h-auto shadow ;
-    }
+	@screen md {
+		@apply relative justify-center rounded h-auto shadow ;
+	}
 }
 
 .resource-card-grid {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	margin-bottom: 10px;
 }
 
 .skill-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 25px
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin-top: 25px
 }
 
 
 // About us page
-.intro {
-    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);    
+.intro-about {
+	background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_1.jpg);    
 }
 
 .apply-section {
-    background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
+	background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
 
-    p {
-        @apply mb-3;
-    }
-    .apply_button {
-        @apply no-underline border py-4 px-6 text-white;
-    
-
-        &:hover {
-            @apply opacity-75 ;
-        }
-    }
+	p {
+		@apply mb-3;
+	}
 }
 
 .paddingx-content {
 
-    @apply px-24;
-    
-    @screen md {
-        @apply px-32;
-    }
+	@apply px-24;
+	
+	@screen md {
+		@apply px-32;
+	}
 
-    @screen lg {
-        @apply px-48;
-    }
+	@screen lg {
+		@apply px-48;
+	}
 
-    @screen xl {
-        @apply px-64;
-    }
+	@screen xl {
+		@apply px-64;
+	}
 
 }
 
 
 .vertical-tabs-container {
-    @apply bg-white w-32 rounded-sm border border-solid border-grey-light-shade;
+	@apply bg-white w-32 rounded-sm border border-solid border-grey-light-shade;
 }
 
 .vertical-tabs-container .vertical-tabs {
-    @apply float-left w-32;
+	@apply float-left w-32;
 
-    &:hover {
-        @apply opacity-75 ;
-    }
+	&:hover {
+		@apply opacity-75 ;
+	}
 
-    button {
-        @apply .w-full py-2;
-    }
+	button {
+		@apply .w-full py-2;
+	}
 }
 
 .tablinks.active {
-    @apply bg-grey-lighter;
+	@apply bg-grey-lighter;
 }
 
 .vertical-tab-content-container {
-    @apply bg-grey-lighter;
+	@apply bg-grey-lighter;
 }
 
+// Employer page
 
+.intro-employer {
+	background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
+}
 
+.text-transform {
+	text-transform: uppercase;
+	text-rendering: optimizeLegibility;
+}
 
+.column {
+	@apply m-4;
 
+	p {
+	    @apply pt-4 text-justify;
+	}
+
+	.icon {
+		@apply inline-block w-30;
+	}
+
+	img {
+		@apply h-25 w-25;
+	}
+
+	.caption {
+		@apply text-ca-grey font-medium;
+	}
+}
+
+.backgrounded {
+	@apply bg-orange-ca;
+}
+
+.table-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 30px;
+	@apply text-left border-b;
+
+	:nth-child(1n+4) {
+		@apply pb-5;
+	}
+	.grid-item:before {
+    content: '';
+		@apply my-5 block border-b;
+	}
+	
+	.grid-item {
+		h4 {
+			@apply text-ca-grey text-center;
+		}
+
+		p {
+			@apply px-3;
+		}
+
+		ul {
+			@apply list-reset;
+	
+			li {
+				@apply px-3 py-4;
+			}
+		}
+	}
+}
+
+.hiring-partner {
+	background-image: url(https://assets.craftacademy.se/images/backgrounds/splash_3.jpg);
+}
+
+// Static pages common
+
+.static_page_button {
+	@apply no-underline border rounded-lg py-4 px-6 text-white;
+
+	&:hover {
+		@apply opacity-75 ;
+	}
+}
