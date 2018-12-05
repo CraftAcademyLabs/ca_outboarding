@@ -1,3 +1,4 @@
+@javascript
 Feature: Recruiter can search through members
     As a recruiter
     In order to find a suitable job candidate
@@ -17,6 +18,7 @@ Scenario: User searches for 'Chris' and gets two hits
     And fills in 'Search for members' with 'Chris'
     And I click 'Search'
     Then I should see 'Found 2 matches'
+    Then stop
     And I should see 'Christopher'
     And I should see 'Christina'
     And I should not see 'John'
