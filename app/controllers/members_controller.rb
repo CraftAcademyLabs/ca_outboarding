@@ -21,10 +21,11 @@ class MembersController < ApplicationController
   end
 
   def search
+    binding.pry
     UsersIndex.import
     query = UsersIndex.query(fuzzy: {first_name: params[:search]})
     @hits = query.hits.count
-    @members = query.objects
+    @members_search = query.objects
     render :search
   end
 
