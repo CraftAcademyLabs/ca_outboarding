@@ -10,7 +10,7 @@ Background:
         | coach_1@craft.com    | John        | Doe       | coach     | Male   |     |
         | recruiter@random.com | Recruiter   | Recruiter | recruiter |        |     |
 
-Scenario: User searches for 'Chris' and gets two hits
+Scenario: User searches for 'Chris' and gets one hit
     Given recruiter "recruiter@random.com" is logged in
     And I visit the site
     And fills in 'Search for members' with 'Christopher'

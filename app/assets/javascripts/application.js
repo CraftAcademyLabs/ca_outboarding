@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require cookies_eu
 
 const addFadeOutAnimation = (element) => {
     element.classList.add('fadeOut')
@@ -139,3 +140,4 @@ document.addEventListener('turbolinks:load', () => {
         hideModalListener('cancel_modal');
     }
 })
+

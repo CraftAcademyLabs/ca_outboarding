@@ -1,3 +1,19 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'cookies_eu';
 @import "animate.css/animate.css";
+
+
+/* Cookie consent*/
+.cookies-eu  {
+    background-color: rgb(199, 199, 199);
+    color: rgb(80, 80, 80); 
+    height: 65px;
+}       
+
+.cookies-eu-ok   {
+    border-radius: 25px;
+    width: 100px;
+    background-color: rgb(50, 177, 165) !important;
+}  
+
