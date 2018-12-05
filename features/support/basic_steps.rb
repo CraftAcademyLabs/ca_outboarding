@@ -52,7 +52,7 @@ Then("(I/he )wait {int} second(s)") do |time|
 end
 
 Then("he accepts the cookie") do
-  within(".js-cookies-eu") do
+  within(".cookies-eu-button-holder") do
     click_on "OK"
   end
 end
