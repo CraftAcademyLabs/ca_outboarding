@@ -52,14 +52,7 @@ Then("(I/he )wait {int} second(s)") do |time|
 end
 
 Then("he accepts the cookie") do
-  def scroll_to(element)
-    script = <<-JS
-      arguments[0].scrollIntoView(true);
-    JS
-
-    Capybara.current_session.driver.browser.execute_script(script, element.native)
-  end
-  scroll_to(page.find("button.js-cookies-eu-ok", visible: false))
+  Capybara.current_session.current_window.resize_to(1000, 1000)
 
   within(".cookies-eu-button-holder") do
     click_on "OK"
