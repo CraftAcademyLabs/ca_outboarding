@@ -1,5 +1,3 @@
-%form.w-full.max-w-sm
-    .flex.items-center.border-b.border-b-2.border-teal.py-2
-        = form_with url: search_members_path, method: :post, local: true do |form|
-            %input.appearance-none.bg-transparent.border-none.w-full.text-grey-darker.mr-3.py-1.px-2.leading-tight.focus:outline-none{"aria-label" => "Full name", placeholder: "Search for members", type: "text"}
-            = form.submit "Search", class: 'ca-button', remote: true
+= form_with url: search_members_path, method: :post, local: true do |form|
+    = form.text_field :search, placeholder: 'Search for members'
+    = form.submit "Search", class: 'ca-button', remote: true
