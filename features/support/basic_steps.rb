@@ -52,6 +52,8 @@ Then("(I/he )wait {int} second(s)") do |time|
 end
 
 Then("he accepts the cookie") do
-  find('.js-cookies-eu-ok').click
+  within(".js-cookies-eu") do
+    click_on "OK"
+  end
 end
 
