@@ -1,0 +1,64 @@
+.intro-about
+  .text-center.py-24.paddingx-content.text-white
+    %h1 About Craft Academy
+    %br
+    %p
+      %strong
+        Craft Academy is a twelve-week intensive course designed to take you from zero to junior programmer. We're a group of dedicated coaches with decades of coding experience.
+%hr
+%section.text-center.paddingx-content.py-24
+  %article
+    %h3.text-orange Our mission
+    %br
+    %h4.text-ca-grey We aim to provide our students with the most effective training possible to prepare them - in an incredibly short time - to join the technical workforce, or build their own advanced projects.
+    %br
+    %p There is a strong need for web developers in Sweden and throughout the world. We train programmers who not only write great code, but who understand the industry's conventions, problem solve with intention, and are ready to join the workforce and be a productive member of a team. We believe that coding is a craft, not just the symbols you put into a program. To that end, we teach an ambitious array of coding skills, introducing students to dozens of tools and two coding languages, but we also teach coding methods like Agile and Test-Driven Development. These practices mold developers who will thrive in the real world.
+%hr
+.apply-section.text-center.paddingx-content.py-24.text-white
+  .centered-row
+    .column
+      %h2 Apply now
+      %br
+      %p
+        %strong
+          We start a new course every eight weeks and continuously review and accept applicants. The application process can take up to two weeks, so please apply in time!
+  .button-row
+    %br
+    %p
+      %a.static_page_button{href: "https://craftacademy.typeform.com/to/hkkxKQ"} Apply Now
+
+%section.text-center.paddingx-content.py-24
+  %h3 Directions
+  %p
+    You can participate in the Craft Academy bootcamp remotely and work from home, but we believe that students get the most out of the program by working near each other and the coaches.
+  .map.flex
+    .vertical-tabs-container
+      .vertical-tabs
+        %button.tablinks#defaultOpen{onclick: "openCity(event, 'gothenburg')"} Gothenburg
+        %button.tablinks{onclick: "openCity(event, 'stockholm')"} Stockholm
+
+    .vertical-tab-content-container
+      #gothenburg.tabcontent
+        = image_tag 'gothenburg.png', width: '300px'
+        %h3 Gothenburg
+        %p In Gothenburg, we are located at Chalmers Innovation Stena Center on Holtermansgatan 1, across from the Chalmers University main entrance.
+      #stockholm.tabcontent
+        = image_tag 'stockholm.png', width: '300px'
+        %h3 Stockholm
+        %p In Stockholm we are located at OpenLab on Valhallavägen 79 (in the vicinity of the Tekniska Högskolan).
+
+:javascript
+  document.getElementById("defaultOpen").click();
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }

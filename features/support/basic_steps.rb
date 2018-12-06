@@ -51,4 +51,11 @@ Then("(I/he )wait {int} second(s)") do |time|
   sleep time
 end
 
+Then("he accepts the cookie") do
+  Capybara.current_session.current_window.resize_to(1000, 1000)
+
+  within(".cookies-eu-button-holder") do
+    click_on "OK"
+  end
+end
 

@@ -22,6 +22,7 @@ gem 'crafted_oauth', github: 'craftacademy/crafted_oauth', branch: 'refactorings
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "aws-sdk-s3", require: false
 gem 'stripe-rails'
+gem 'high_voltage', '~> 3.1'
 gem 'cookies_eu'
 
 group :development, :test do
