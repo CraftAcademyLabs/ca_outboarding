@@ -22,6 +22,7 @@ class MembersController < ApplicationController
 
   def search
     UsersIndex.import
+    # binding.pry
     query = UsersIndex.query(fuzzy: {first_name: params[:search]})
     @hits = query.hits.count
     @members = query.objects
