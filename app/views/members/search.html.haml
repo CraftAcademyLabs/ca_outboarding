@@ -1,4 +1,9 @@
-%p= "Found #{@hits} matches"
+.bg-blue-lightest.border-t.border-b.border-blue.text-blue-dark.px-4.py-3{role: "alert"}
+    - if @hits.zero?
+        %p.font-bold= "Found no matches, would you like to search again?"
+        = render partial: 'partials/search'
+    - else
+        %p.font-bold= "Found #{@hits} matching member"
 
 .members.pt-10
     - @members.each do |member|

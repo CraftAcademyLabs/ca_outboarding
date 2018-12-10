@@ -16,20 +16,20 @@ Background:
 Scenario: User searches for 'Chris' and gets one hit
     And fills in 'Search for members' with 'Christopher'
     And I click 'Search'
-    Then I should see 'Found 1 matches'
+    Then I should see 'Found 1 matching member'
     And I should see 'Christopher'
     And I should not see 'John'
 
-Scenario: User searches for 'One' and gets one hit
+Scenario: User searches for 'Mustafa' and gets one hit
     And fills in 'Search for members' with 'Mustafa'
     And I click 'Search'
-    Then I should see 'Found 1 matches'
+    Then I should see 'Found 1 matching member'
     And I should see 'Mustafa'
     And I should not see 'Williams'
 
-Scenario: User searches for 'One' and gets one hit
+Scenario: User searches for 'Female' and gets one hit
     And fills in 'Search for members' with 'Female'
     And I click 'Search'
-    Then I should see 'Found 1 matches'
+    Then I should see 'Found 1 matching member'
     And I should see 'Jane Mustafa'
     And I should see 'Gender: Female'
