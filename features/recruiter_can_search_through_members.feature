@@ -18,3 +18,12 @@ Scenario: User searches for 'Chris' and gets one hit
     Then I should see 'Found 1 matches'
     And I should see 'Christopher'
     And I should not see 'John'
+
+    Scenario: User searches for 'One' and gets one hit
+        Given recruiter "recruiter@random.com" is logged in
+        And I visit the site
+        And fills in 'Search for members' with 'One'
+        And I click 'Search'
+        Then I should see 'Found 1 matches'
+        And I should see 'One'
+        And I should not see 'Doe'
