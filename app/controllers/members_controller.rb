@@ -22,9 +22,9 @@ class MembersController < ApplicationController
 
   def search
     UsersIndex.import
-    query = UsersIndex.query(fuzzy: {first_name: params[:search], last_name: params[:search]})
+    query = UsersIndex.query(multi_match: {query: params[:search]})
     @hits = query.hits.count
-    @members_search = query.objects
+    @members = query.objects
     render :search
   end
 

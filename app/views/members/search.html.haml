@@ -1,4 +1,20 @@
 %p= "Found #{@hits} matches"
 
-- @members_search.each do |member|
-    %h2= member.first_name
+.members.pt-10
+    - @members.each do |member|
+        %div{id: dom_id(member)}
+            .max-w-md.w-full.lg:flex.p-5
+                .h-48.lg:h-auto.lg:w-48.flex-none.bg-cover.rounded-t.lg:rounded-t-none.lg:rounded-l.text-center.overflow-hidden{style: "background-image: url('https://tailwindcss.com/img/card-left.jpg')", title: "Woman holding a mug"}
+                .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4.flex.flex-col.justify-between.leading-normal
+                    .mb-8
+                    %p.text-sm.text-grey-dark.flex.items-center
+                    .text-black.font-bold.text-xl.mb-2
+                        = member.display_name
+                        %br
+                        %div.font-light
+                            = "Age: #{member.age} Gender: #{member.gender}"
+                    %p.text-grey-darker.text-base
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam qui, doloremque veritatis sed similique debitis nam sit rerum ducimus? Ducimus dignissimos rem voluptatum possimus aliquam deleniti soluta! Odit, nesciunt quidem!
+                        %div.pt-5
+                            = link_to "View profile", member_path(member), class: 'ca-button', remote: true
+                    .flex.items-center
