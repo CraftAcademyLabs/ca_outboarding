@@ -11,13 +11,15 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
-Cucumber::Rails::Database.javascript_strategy = :truncation
+# Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Before do 
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:linkedin] = OmniAuth::AuthHash.new(OmniAuthFixtures.linkedin_mock)
   OmniAuth.config.mock_auth[:crafted_oauth] = OmniAuth::AuthHash.new(OmniAuthFixtures.crafted_oauth_mock)
+  UsersIndex.create! unless UsersIndex.exists?
 end
+
 
 Chromedriver.set_version '2.36' unless ENV['CI'] == 'true'
 
@@ -51,8 +53,8 @@ After do
   Warden.test_reset!
 end
 
-#if !ENV['CHEWY']
-  Before do
+if !ENV['CHEWY']
+  Before('@search') do
     #binding.pry
     Chewy.strategy(:bypass)
     Elasticsearch::Extensions::Test::Cluster.start(
@@ -63,13 +65,13 @@ end
       UsersIndex.create! unless UsersIndex.exists?
   end
 
-  After do
+  After('@search') do
     Elasticsearch::Extensions::Test::Cluster.stop(port: 9250)
   end
-#end
+end
 
 After do
-  UsersIndex.delete!
+  UsersIndex.delete! if UsersIndex.exists?
 end
 
 World(FactoryBot::Syntax::Methods)
