@@ -35,9 +35,9 @@ const closeModalListener = (element) => {
 const closeModal = (element) => {
     let modalElement = element || document.getElementById('modal')
     addFadeOutAnimation(modalElement)
-    setTimeout( () =>  { 
+    setTimeout(() => {
         modalElement.remove()
-    }, 2000)  
+    }, 2000)
 }
 
 const stripeTokenHandler = (token) => {

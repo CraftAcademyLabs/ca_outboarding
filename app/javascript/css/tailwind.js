@@ -53,7 +53,7 @@ let colors = {
   'smoke-lighter': 'rgba(0, 0, 0, 0.25)',
   'smoke-lightest': 'rgba(0, 0, 0, 0.1)',
 
-  
+
   'transparent': 'transparent',
 
   'black': '#22292f',
@@ -64,6 +64,8 @@ let colors = {
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#f8fafc',
+  'grey-light-shade': '#ddd',
+  'ca-grey': '#afafaf',
   'white': '#ffffff',
 
   'red-darkest': '#3b0d0c',
@@ -493,6 +495,8 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '24': '6rem',
+    '25': '6.25rem',
+    '30': '7.5rem',
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
@@ -541,6 +545,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '24': '6rem',
+    '25': '6.25rem',
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
@@ -670,6 +675,9 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '48': '12rem',
+    '64': '16rem',
+    '128': '32rem'
   },
 
 
