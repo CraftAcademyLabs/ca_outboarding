@@ -34,3 +34,12 @@ Scenario: User searches for 'Female' and gets one hit
     Then I should see 'Found 1 matching member'
     And I should see 'Jane Mustafa'
     And I should see 'Gender: Female'
+
+Scenario: User searches for '34' and gets one hit
+    And fills in 'Search for members' with '34'
+    And I click 'Search'
+    Then I should see 'Found 1 matching member'
+    And I should see 'Christopher Williams'
+    And I should see 'Gender: Male'
+    And I should see 'Age: 34'
+    And I should not see 'Jane Mustafa'
