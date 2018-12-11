@@ -1,4 +1,4 @@
-@javascript @search 
+@search 
 Feature: Recruiter can search through members
     As a recruiter
     In order to find a suitable job candidate

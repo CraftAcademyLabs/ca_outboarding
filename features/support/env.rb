@@ -17,7 +17,6 @@ Before do
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:linkedin] = OmniAuth::AuthHash.new(OmniAuthFixtures.linkedin_mock)
   OmniAuth.config.mock_auth[:crafted_oauth] = OmniAuth::AuthHash.new(OmniAuthFixtures.crafted_oauth_mock)
-  UsersIndex.create! unless UsersIndex.exists?
 end
 
 
@@ -53,7 +52,7 @@ After do
   Warden.test_reset!
 end
 
-if !ENV['CHEWY']
+if ENV['CHEWY']
   Before('@search') do
     #binding.pry
     Chewy.strategy(:bypass)
