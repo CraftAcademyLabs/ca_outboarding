@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: User can signup using Craft Academy credentials
   As a User
   In order to have a unified experience

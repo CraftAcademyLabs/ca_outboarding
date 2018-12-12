@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Member can login and access own profile
 
     As a Member,

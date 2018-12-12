@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Member profiles are displayed on index page
 
     As a visitor

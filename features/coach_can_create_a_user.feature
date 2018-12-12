@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Coach can create a user (member)
 
     Feature Description

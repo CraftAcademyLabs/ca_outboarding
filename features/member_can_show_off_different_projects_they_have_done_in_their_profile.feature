@@ -1,3 +1,4 @@
+@search
 Feature: Member can show off different projects they have done in their profile
 
   As a member

@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Recruiter can purchase a subscription to gain access
 
     As a recruiter

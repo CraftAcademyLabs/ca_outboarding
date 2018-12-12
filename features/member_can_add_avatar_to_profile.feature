@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Member can add avatar to own profile
 
     As a Member,

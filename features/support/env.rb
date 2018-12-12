@@ -11,7 +11,7 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
-# Cucumber::Rails::Database.javascript_strategy = :truncation
+Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Before do 
   OmniAuth.config.test_mode = true
@@ -52,7 +52,7 @@ After do
   Warden.test_reset!
 end
 
-if ENV['CHEWY']
+if !ENV['CHEWY']
   Before('@search') do
     #binding.pry
     Chewy.strategy(:bypass)

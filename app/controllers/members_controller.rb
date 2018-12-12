@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MembersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @members = User.member

@@ -1,4 +1,4 @@
-@javascript
+@javascript @search
 Feature: Member profile has tech stack information
 
   As a Member

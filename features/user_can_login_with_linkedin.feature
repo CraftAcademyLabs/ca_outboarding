@@ -1,3 +1,4 @@
+@search
 Feature: User can log in using LinkedIn
     As a user of the system
     In order to simplify the sign up/sign in process 

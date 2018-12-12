@@ -1,3 +1,4 @@
+@search
 Feature: Visitor can see basic marketing information
   As a system owner
   In order to help our visitors to understand the benefits of Craft Academy and navigate through our offerings
