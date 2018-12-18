@@ -12,10 +12,10 @@ Feature: Recruiter can purchase a subscription to gain access
             | email                 | first_name  | last_name | role      | subscriber |
             | recruiter@random.com  | Recruiter   | Recruiter | recruiter | false      |
             | subscriber@random.com | Subscribing | Recruiter | recruiter | true       |
-            | alumni_1@craft.com    | Student     | One       | member    |            |
-            | alumni_2@craft.com    | Student     | Two       | member    |            |
-            | alumni_3@craft.com    |             |           | member    |            |
-            | coach_1@craft.com     | Head        | Coach     | coach     |            |
+            | alumni_123@craft.com    | Student     | One       | member    |            |
+            | alumni_223@craft.com    | Student     | Two       | member    |            |
+            | alumni_323@craft.com    |             |           | member    |            |
+            | coach_123@craft.com     | Head        | Coach     | coach     |            |
 
     Scenario: Recruiter that has NOT payed up tries to access site and is re-routed to payment form
         Given recruiter "recruiter@random.com" is logged in

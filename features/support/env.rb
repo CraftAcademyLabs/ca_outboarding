@@ -41,7 +41,8 @@ Capybara.javascript_driver = :chrome
 
 Before do 
   Warden.test_mode!
-  StripeMock.start 
+  StripeMock.start
+  UsersIndex.create! unless UsersIndex.exists?
 end
 
 Before '@stripe_declined' do 
@@ -61,7 +62,6 @@ if ENV['CHEWY']
       nodes: 1,
       timeout: 120
     ) unless Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
-      UsersIndex.create! unless UsersIndex.exists?
   end
 
   After('@search') do

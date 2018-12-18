@@ -7,10 +7,10 @@ Feature: Recruiter can search through members
 Background:
     Given the following users exists
         | email                | first_name  | last_name | role      | gender | age |
-        | alumni_1@craft.com   | Christopher | Williams  | member    | Male   | 34  |
-        | alumni_2@craft.com   | Jane        | Mustafa   | member    | Female | 20  |
-        | coach_1@craft.com    | John        | Doe       | coach     | Male   |     |
-        | recruiter@random.com | Recruiter   | Recruiter | recruiter |        |     |
+        | alumni_12@craft.com   | Christopher | Williams  | member    | Male   | 34  |
+        | alumni_22@craft.com   | Jane        | Mustafa   | member    | Female | 20  |
+        | coach_12@craft.com    | John        | Doe       | coach     | Male   |     |
+        | recruiter1@random.com | Recruiter   | Recruiter | recruiter |        |     |
     And recruiter "recruiter@random.com" is logged in
     And I visit the site
 
