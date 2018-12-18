@@ -8,4 +8,8 @@ module ApplicationHelper
       true
     end
   end
+
+  def iconHelper(icon)
+    "https://assets.craftacademy.se/images/icons/#{icon}"
+  end
 end

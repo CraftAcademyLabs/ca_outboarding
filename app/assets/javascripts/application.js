@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require cookies_eu
 
 const addFadeOutAnimation = (element) => {
     element.classList.add('fadeOut')
@@ -34,9 +35,9 @@ const closeModalListener = (element) => {
 const closeModal = (element) => {
     let modalElement = element || document.getElementById('modal')
     addFadeOutAnimation(modalElement)
-    setTimeout( () =>  { 
+    setTimeout(() => {
         modalElement.remove()
-    }, 2000)  
+    }, 2000)
 }
 
 const stripeTokenHandler = (token) => {
@@ -139,3 +140,4 @@ document.addEventListener('turbolinks:load', () => {
         hideModalListener('cancel_modal');
     }
 })
+

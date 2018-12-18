@@ -12,10 +12,12 @@
 
   %body.flex.flex-col.h-full
     = render partial: 'partials/header'
-    %section.flex-1.my-8.container.m-auto.max-w-xl 
+    %section.flex-1.mt-8
       = alert || notice
       #content
         = yield
       #added_content
     .pin-b
+      = render 'cookies_eu/consent_banner'
       = render partial: 'partials/footer'
+      
