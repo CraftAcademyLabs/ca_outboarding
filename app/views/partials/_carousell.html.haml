@@ -1,0 +1,11 @@
+.carousel{role: "listbox"}
+    .carousel-inner{role: "listbox"}
+        - @entries.each_with_index do |entry, index|
+            - image_name = "ca_marketing_#{index + 1}.jpg"
+            .item
+                = image_tag image_name, class: 'faux'
+                .carousel-caption
+                    %h1= entry
+    / Controls
+    %a.carousel-control.prev= "Previous"
+    %a.carousel-control.next= "Next"

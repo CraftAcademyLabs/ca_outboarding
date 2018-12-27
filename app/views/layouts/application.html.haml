@@ -15,6 +15,8 @@
     %section.flex-1.mt-8
       = alert || notice
       #content
+        - if current_page?(root_path)
+          = render partial: 'partials/carousell'
         = yield
       #added_content
     .pin-b
