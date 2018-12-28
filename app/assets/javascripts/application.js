@@ -32,17 +32,11 @@ const initiateSlider = (selector) => {
         onInit: () => { },
         onChange: () => { },
     });
-     const prev = document.querySelector('.prev');
+    const prev = document.querySelector('.prev');
     const next = document.querySelector('.next');
     prev.addEventListener('click', () => App.slider.prev());
     next.addEventListener('click', () => App.slider.next());
- }
- document.addEventListener('turbolinks:load', () => {
-    let slider = document.querySelector('.carousel');
-    if (slider) {
-        initiateSlider('.carousel-inner')
-    };
-})
+}
 
 const addFadeOutAnimation = (element) => {
     element.classList.add('fadeOut')
@@ -167,5 +161,10 @@ document.addEventListener('turbolinks:load', () => {
         stripeModalToggle();
         hideModalListener('cancel_modal');
     }
+
+    let slider = document.querySelector('.carousel');
+    if (slider) {
+        initiateSlider('.carousel')
+    };
 })
 
