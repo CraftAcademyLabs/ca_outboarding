@@ -9,7 +9,11 @@ module ApplicationHelper
     end
   end
 
-  def iconHelper(icon)
+  def icon_helper(icon)
     "https://assets.craftacademy.se/images/icons/#{icon}"
+  end
+
+  def background_helper(background_image)
+    "https://assets.craftacademy.se/images/backgrounds/#{background_image}"
   end
 end
