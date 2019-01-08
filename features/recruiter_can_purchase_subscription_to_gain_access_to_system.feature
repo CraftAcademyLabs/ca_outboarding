@@ -20,24 +20,24 @@ Feature: Recruiter can purchase a subscription to gain access
     Scenario: Recruiter that has NOT payed up tries to access site and is re-routed to payment form
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
-        And clicks "View profile" on "alumni_1@craft.com"
+        And clicks "View profile" on "alumni_123@craft.com"
         And he should see "Student One"
-        But he should not see "alumni_1@craft.com"
+        But he should not see "alumni_123@craft.com"
         And he should see "Purchase a subscription to see full member profile."
         And he should see a link "Learn more"
 
     Scenario: Recruiter that has already payed up should be granted access
         Given recruiter "subscriber@random.com" is logged in
         And he visits the site
-        And clicks "View profile" on "alumni_1@craft.com"
+        And clicks "View profile" on "alumni_123@craft.com"
         And he should see "Student One"
         And he should not see "Purchase a subscription to see full member profile."
-        And he should see "alumni_1@craft.com"
+        And he should see "alumni_123@craft.com"
 
     Scenario: Recruiter pays up and becomes a subscriber
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
-        And clicks "View profile" on "alumni_1@craft.com"
+        And clicks "View profile" on "alumni_123@craft.com"
         And clicks "Learn more"
         And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'valid' credentials
@@ -49,7 +49,7 @@ Feature: Recruiter can purchase a subscription to gain access
     Scenario: Recruiter fails to pay up and we say "WTF?"
         Given recruiter "recruiter@random.com" is logged in
         And he visits the site
-        And clicks "View profile" on "alumni_1@craft.com"
+        And clicks "View profile" on "alumni_123@craft.com"
         And clicks "Learn more"
         And clicks on 'Yes, I want to purchase a subscription'
         And he fill in and submit the stripe form with 'invalid' credentials
