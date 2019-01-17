@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "animate.css": "^3.7.0",
+    "siema": "^1.5.1",
     "tailwindcss": "^0.6.6"
   },
   "devDependencies": {

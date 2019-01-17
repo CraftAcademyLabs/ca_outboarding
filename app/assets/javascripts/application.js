@@ -15,6 +15,28 @@
 //= require turbolinks
 //= require_tree .
 //= require cookies_eu
+//= require siema/dist/siema.min.js
+
+const initiateSlider = (selector) => {
+    App.slider = new Siema({
+        selector: selector,
+        duration: 2,
+        easing: 'ease-out',
+        perPage: 1,
+        startIndex: 0,
+        draggable: true,
+        multipleDrag: true,
+        threshold: 20,
+        loop: true,
+        rtl: false,
+        onInit: () => { },
+        onChange: () => { },
+    });
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    prev.addEventListener('click', () => App.slider.prev());
+    next.addEventListener('click', () => App.slider.next());
+}
 
 const addFadeOutAnimation = (element) => {
     element.classList.add('fadeOut')
@@ -139,5 +161,10 @@ document.addEventListener('turbolinks:load', () => {
         stripeModalToggle();
         hideModalListener('cancel_modal');
     }
+
+    let slider = document.querySelector('.carousel');
+    if (slider) {
+        initiateSlider('.carousel')
+    };
 })
 
