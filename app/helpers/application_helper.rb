@@ -16,4 +16,8 @@ module ApplicationHelper
   def background_helper(background_image)
     "https://assets.craftacademy.se/images/backgrounds/#{background_image}"
   end
+
+  def list_curriculum
+    CurriculumService.new().list
+  end
 end

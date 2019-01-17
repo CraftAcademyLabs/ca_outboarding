@@ -367,13 +367,32 @@ body {
 
 .intro-curriculum {
 	h1 {
-		font-size: 43px;
+		@apply .text-5xl;
 	}
 
 	p {
-		font-size: 19px;
+		@apply text-xl;
 	}
 }
+
+.curriculum-list {
+	display: grid;
+	grid-template-columns: 250px auto;
+	
+	.main {
+		grid-column-start: -1;
+	}
+	
+	.sidebar {
+		// width: 250px;
+		// position: sticky;
+		// top: 0;
+		.list {
+			@apply sticky pin-t pt-4;
+		}
+	}
+}
+
 
 // Static pages common
 
