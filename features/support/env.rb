@@ -53,9 +53,8 @@ After do
   Warden.test_reset!
 end
 
-if ENV['CHEWY']
+if !ENV['CHEWY']
   Before('@search') do
-    #binding.pry
     Chewy.strategy(:bypass)
     Elasticsearch::Extensions::Test::Cluster.start(
       port: 9250,
