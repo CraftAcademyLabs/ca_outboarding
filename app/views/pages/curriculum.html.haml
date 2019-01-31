@@ -32,26 +32,28 @@
 			.font-bold.pb-2= week["summary"]
 			= week["blurb"]
 
-%section.paddingx-content.py-6
-	-# Start by creating a course dates yaml file and service file to read it and then a helper file to display it.
+%section.paddingx-content.py-6.text-center
+	%h3.text-orange-ca.pb-6.uppercase.text-4xl Course Dates
+	%p.mb-6.font-bold.text-xl Apply in time - the selection process takes approximately two weeks and we will interview you before you are accepted. There are at most fourteen spots in each cohort.
 	.flex.text-center.border-b-2.font-semibold
-		%p.w-forty.text-base.mb-4 Program
-		%p.w-twenty.mb-4 Course start
-		%p.w-ten.mb-4 Graduation
-		%p.w-thirty.mb-4 Locations
+		%p.w-forty.text-base.mb-6 Program
+		%p.w-twenty.mb-6 Course start
+		%p.w-ten.mb-6 Graduation
+		%p.w-thirty.mb-6 Locations
 	- course_dates.each_with_index do |course|
 		.flex.text-center
-			%div.w-forty.text-base.border-b-2.h-32.flex.items-center.justify-center
+			%div.w-forty.text-base.border-b-2.flex.items-center.justify-center
 				= course["course"]
-			%div.w-twenty.border-b-2.font-semibold.h-32.p-auto.flex.justify-center.items-center
+			%div.w-twenty.border-b-2.font-semibold.p-auto.flex.justify-center.items-center
 				%div
 					= course["start_date"]
 					.mt-2.flex.text-xs
 						- if course["precourse_start_date"]
 							%p.mr-2 Prep course starts 
 							%span= course["precourse_start_date"]
-			%div.w-ten.border-b-2.h-32.flex.justify-center.items-center
+			%div.w-ten.border-b-2.h-24.flex.justify-center.items-center
 				= course["end_date"]
-			%div.w-thirty.border-b-2.h-32.flex.justify-center.items-center
+			%div.w-thirty.border-b-2.h-24.flex.justify-center.items-center
 				= course["locations"]
 	
+= render partial: 'partials/apply'
