@@ -1,37 +1,57 @@
 %section{style: "background-image: url(#{background_helper('splash_3.jpg')});"}
-  .intro-curriculum
-    .text-center.py-24.paddingx-content.text-white
-      %h1 Course Plans
-      %p
-        %strong
-          Our programs follow detailed and proven course plans - developed by professional programmers and based on real-life projects and the latest industry practices.
-          Good programmers and security specialists are made through practice. At Craft Academy we put the greatest focus on actually writing and testing code and using technology - every day, constantly increasing complexity. We know that this is the only way to learn new skills. Theory comes after practice.
+	.intro-curriculum
+		.text-center.py-24.paddingx-content.text-white
+			%h1 Course Plans
+			%p
+				%strong
+					Our programs follow detailed and proven course plans - developed by professional programmers and based on real-life projects and the latest industry practices.
+					Good programmers and security specialists are made through practice. At Craft Academy we put the greatest focus on actually writing and testing code and using technology - every day, constantly increasing complexity. We know that this is the only way to learn new skills. Theory comes after practice.
 
 %section.text-center.paddingx-content.pt-24
-  %h3.text-orange-ca.pb-6.uppercase Full Stack Web Developer Bootcamp 
-  %h4.text-grey-dark.pb-6.uppercase 4 weeks prep course & 12 weeks of camp
-  %p.pb-3 Learn Agile software development methodologies along with modern frameworks including: HTML5, Javascript, Ruby on Rials, AngularJS, and Ionic. (See below for more details)
-  %hr.border-b-4
-  %h3.text-orange-ca.py-6.uppercase Enterprise Java Web Application Developer Bootcamp 
-  %h4.text-grey-dark.pb-6.uppercase 4 weeks prep course & 12 weeks of camp
-  %p.pb-6 Java is one of the major programming languages available today and with many commercial and open source implementations, Java is the enterprise standard to build scalable business services for web and mobile applications. With Enterprise Java Web Application Developer Bootcamp you will learn how to build fully featured web applications using Agile methodologies. This camp is also covering modern JavaScript frameworks for front-end development.
-  %h3.text-orange-ca.pb-6.uppercase Cyber Security Specialist Bootcamp 
-  %h4.text-grey-dark.pb-6.uppercase 16 weeks of camp
-  %p.pb-3 Digitalization leads to heightened exposure to cyber-attacks, and Cyber Security Specialists has become one of the most mission critical roles in the many industries. The number and frequency of cyber attacks is steadily on the rise and cyber criminals becoming ever more sophisticated. Achieving a secure infrastructure requires that it is designed, built and operated by people who understand the threats, know the security requirements and have the skills to build and operate secure systems in general. The demand for employees with cybersecurity training is higher than ever. Craft Academy’s Cyber Security Specialist Bootcamp is designed to provide a both a holistic as well as detailed knowledge of key technologies and techniques required to improve the security of existing computer systems but also the design of new systems with security protections.
-  %hr.border-b-4
+	%h3.text-orange-ca.pb-6.uppercase Full Stack Web Developer Bootcamp 
+	%h4.text-grey-dark.pb-6.uppercase 4 weeks prep course & 12 weeks of camp
+	%p.pb-3 Learn Agile software development methodologies along with modern frameworks including: HTML5, Javascript, Ruby on Rials, AngularJS, and Ionic. (See below for more details)
+	%hr.border-b-4
+	%h3.text-orange-ca.py-6.uppercase Enterprise Java Web Application Developer Bootcamp 
+	%h4.text-grey-dark.pb-6.uppercase 4 weeks prep course & 12 weeks of camp
+	%p.pb-6 Java is one of the major programming languages available today and with many commercial and open source implementations, Java is the enterprise standard to build scalable business services for web and mobile applications. With Enterprise Java Web Application Developer Bootcamp you will learn how to build fully featured web applications using Agile methodologies. This camp is also covering modern JavaScript frameworks for front-end development.
+	%h3.text-orange-ca.pb-6.uppercase Cyber Security Specialist Bootcamp 
+	%h4.text-grey-dark.pb-6.uppercase 16 weeks of camp
+	%p.pb-3 Digitalization leads to heightened exposure to cyber-attacks, and Cyber Security Specialists has become one of the most mission critical roles in the many industries. The number and frequency of cyber attacks is steadily on the rise and cyber criminals becoming ever more sophisticated. Achieving a secure infrastructure requires that it is designed, built and operated by people who understand the threats, know the security requirements and have the skills to build and operate secure systems in general. The demand for employees with cybersecurity training is higher than ever. Craft Academy’s Cyber Security Specialist Bootcamp is designed to provide a both a holistic as well as detailed knowledge of key technologies and techniques required to improve the security of existing computer systems but also the design of new systems with security protections.
+	%hr.border-b-4
 
 %section.paddingx-content.py-6.curriculum-list
-  .sidebar
-    .list
-      - list_curriculum.each_with_index do |week, index|
-        %p
-          %a.text-black.no-underline{href: "#definition-#{index}"}= week["title"]
-  .main
-    - list_curriculum.each_with_index do |week, index|
-      %h4.text-ca-grey.uppercase.py-4{id: "definition-#{index}"}= week["title"]
-      .font-bold.pb-2= week["summary"]
-      = week["blurb"]
+	.sidebar
+		.list
+			- list_curriculum.each_with_index do |week, index|
+				%p
+					%a.text-black.no-underline{href: "#definition-#{index}"}= week["title"]
+	.main
+		- list_curriculum.each_with_index do |week, index|
+			%h4.text-ca-grey.uppercase.py-4{id: "definition-#{index}"}= week["title"]
+			.font-bold.pb-2= week["summary"]
+			= week["blurb"]
 
 %section.paddingx-content.py-6
-  -# Start by creating a course dates yaml file and service file to read it and then a helper file to display it.
-  
+	-# Start by creating a course dates yaml file and service file to read it and then a helper file to display it.
+	.flex.text-center.border-b-2.font-semibold
+		%p.w-forty.text-base.mb-4 Program
+		%p.w-twenty.mb-4 Course start
+		%p.w-ten.mb-4 Graduation
+		%p.w-thirty.mb-4 Locations
+	- course_dates.each_with_index do |course|
+		.flex.text-center
+			%div.w-forty.text-base.border-b-2.h-32.flex.items-center.justify-center
+				= course["course"]
+			%div.w-twenty.border-b-2.font-semibold.h-32.p-auto.flex.justify-center.items-center
+				%div
+					= course["start_date"]
+					.mt-2.flex.text-xs
+						- if course["precourse_start_date"]
+							%p.mr-2 Prep course starts 
+							%span= course["precourse_start_date"]
+			%div.w-ten.border-b-2.h-32.flex.justify-center.items-center
+				= course["end_date"]
+			%div.w-thirty.border-b-2.h-32.flex.justify-center.items-center
+				= course["locations"]
+	

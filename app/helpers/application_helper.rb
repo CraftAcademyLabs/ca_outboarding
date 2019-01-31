@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+6# frozen_string_literal: true
 
 module ApplicationHelper
   def authorized_to_access?
@@ -20,4 +20,8 @@ module ApplicationHelper
   def list_curriculum
     CurriculumService.new().list
   end
+
+	def course_dates
+		CurriculumService.new().course_dates
+	end
 end

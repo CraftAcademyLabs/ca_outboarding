@@ -1,0 +1,27 @@
+- start_date: 21 January 2019
+  end_date: 13 April 2019
+  precourse_start_date: 3 December 2018
+  locations: "Göteborg, Stockholm, Remote"
+  course: Full Stack Web Developer Bootcamp
+  price: 97 000
+
+- start_date: 1 April 2019
+  end_date: 29 June 2019
+  precourse_start_date: 4 March 2019
+  locations: "Göteborg, Stockholm, Remote"
+  course: Full Stack Web Developer Bootcamp
+  price: 97 000
+
+- start_date: 4 February 2019
+  end_date: 25 May 2019
+  locations: "Göteborg, Stockholm"
+  course: Cyber Security Specialist Bootcamp
+  price: 125 000
+
+
+- start_date: 25 March 2019
+  end_date: 15 June 2019
+  precourse_start_date: 25 February 2019
+  locations: "Göteborg, Stockholm, Remote"
+  course: Enterprise Java Web Application Developer Bootcamp
+  price: 115 000 
