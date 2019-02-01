@@ -77,8 +77,13 @@ Then("he should see the employers information") do
 end
 
 Then("he should see the curriculum information") do
-  expect(page).to have_content "We strive to train junior developers who will seamlessly fit into a workplace, ready to hit the ground running and dive into real projects. We train not just competent coders, with a wide range of skills, but teammates, problem-solvers and leaders."
+  expect(page).to have_content "Our programs follow detailed and proven course plans - developed by professional programmers and based on real-life projects and the latest industry practices. Good programmers and security specialists are made through practice."
 end
+
+Then("he should see the prices information") do
+	expect(page).to have_content "Enrolling in the Craft Academy bootcamp is an investment in your future. It is the quickest way to jump-start a career in software development; one of the fastest and most efficient ways to change your life. "
+end
+
 
 Then("he should see {string} in the {string}") do |name, type|
   of_type = type.split.first.downcase
