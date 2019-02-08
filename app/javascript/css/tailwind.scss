@@ -263,7 +263,7 @@ body {
 	@screen xl {
 		@apply px-64;
 	}
-
+	
 }
 
 
@@ -384,15 +384,45 @@ body {
 	}
 	
 	.sidebar {
-		// width: 250px;
-		// position: sticky;
-		// top: 0;
 		.list {
 			@apply sticky pin-t pt-4;
 		}
 	}
 }
 
+// Prices page
+
+.info-prices {
+	.wrap-text {
+		@apply px-ten text-xl;
+
+		@screen xl {
+			@apply px-twenty-five;
+		}
+	}
+}
+
+.course-fees {
+
+	.left-column {
+		@apply min-w-half flex-wrap ;
+	}
+
+	.right-column {
+		@apply min-w-half ;
+	}
+	@screen md {
+		@apply min-w-0;
+		.left-column {
+			@apply pl-24 pr-6 ;
+		}
+		
+		.right-column {
+			@apply  pr-24 pl-6 ;
+		}
+	}
+
+}
 
 // Static pages common
 

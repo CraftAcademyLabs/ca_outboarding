@@ -24,4 +24,9 @@ module ApplicationHelper
 	def course_dates
 		CurriculumService.new().course_dates
 	end
+
+	def future_courses
+		course_dates = CurriculumService.new().course_dates
+		course_dates.select {|c| Date.parse(c["start_date"]) >= Date.today  }
+	end
 end
