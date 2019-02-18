@@ -4,17 +4,19 @@
 		%p.font-bold.wrap-text
 			Enrolling in the Craft Academy bootcamp is an investment in your future. It is the quickest way to jump-start a career in software development; one of the fastest and most efficient ways to change your life. 
 
-%section.course-fees
+.course-fees
 	.text-center.py-24.paddingx-content
 		%h4.text-grey-dark.pb-6.uppercase Craft Academy
 		%h2.text-orange-ca.pb-6.uppercase Course Fees
 		- future_courses[0..1].each do |course|
 			%h4.text-grey-dark.pb-6.uppercase= course["course"]
 			%h4.font-bold.uppercase.pb-6= [course["price"], 'SEK incl. VAT'].join(' ')
-		.flex
-			%div.left-column
+		.two-columns
+			.left-column
 				%h3.text-orange-ca.pb-6.uppercase Everything included
 				%p.leading-normal.text-left Your course fees include all instruction, materials, and continued support before and after the bootcamp with technical and career assistance. We provide all the necessary tools to develop efficiently - software licenses, a functional and ergonomic work environment. The course fee also includes the Swedish VAT tax of 25%.
-			%div.right-column
+			.right-column
 				%h3.text-orange-ca.pb-6.uppercase Female participants
 				%p.leading-normal.text-left We also proudly offer a 5% discount to female bootcamp participants. Our industry needs more female developers and we want to do everything we can to help women succeed on their coding journey.
+		%p.my-6.text Finances shouldn't stop anyone from fulfilling their dream of becoming a programmer. We encourage everyone to contact us to discuss payment options, including our flexible deposit and payment schedule.
+		%p.text A new cohort starts every eight weeks. Will you start your career as a junior developer with us?
