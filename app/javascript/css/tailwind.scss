@@ -441,6 +441,19 @@ body {
 	}
 }
 
+.payment {
+	.prices-grid {
+		display: grid;
+		grid-template-columns: 40% 20% 20% 20%;
+		grid-template-areas: auto;
+		@apply border-b-2;
+
+		div {
+			@apply flex justify-center items-center h-24;
+		}
+	}
+}
+
 // Static pages common
 
 .static_page_button {
