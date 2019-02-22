@@ -406,10 +406,6 @@ body {
 .course-fees {
 	@media screen and (max-width: 992px) {
 		.two-columns {
-			.left-column {
-				// @apply min-w-half flex-wrap;
-			}
-
 			.right-column {
 				// @apply min-w-half;
 				h3 {
@@ -456,7 +452,7 @@ body {
 			@apply border-b-2;
 
 			div {
-				@apply flex justify-center items-center h-24;
+				@apply flex justify-center items-center min-h-16;
 			}
 		}
 	}
@@ -469,7 +465,7 @@ body {
 			@apply border-b-2;
 
 			div {
-				@apply flex justify-center items-center h-24;
+				@apply flex justify-center items-center min-h-16;
 			}
 		}
 	}
@@ -482,7 +478,7 @@ body {
 			@apply border-b-2;
 
 			div {
-				@apply flex justify-center items-center h-24;
+				@apply flex justify-center items-center min-h-16;
 			}
 		}
 	}
