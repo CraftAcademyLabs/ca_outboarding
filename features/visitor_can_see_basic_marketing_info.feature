@@ -15,3 +15,15 @@ Feature: Visitor can see basic marketing information
     Then he should be on the "employers" page
     And he should see the employers information
 
+  Scenario: Visitor sees the curriculum page
+    Given a visitor visits the site
+    And he clicks on "Curriculum"
+    Then he should be on the "curriculum" page
+    And he should see the curriculum information
+
+  Scenario: Visitor sees the prices page
+    Given a visitor visits the site
+    And he clicks on "Prices"
+    Then he should be on the "prices" page
+    And he should see the prices information
+

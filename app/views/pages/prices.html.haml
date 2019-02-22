@@ -1,0 +1,166 @@
+.info-prices{style: "background-image: url(#{background_helper('splash_4.jpg')});"}
+	.text-center.py-24.paddingx-content.text-white
+		%h1.uppercase.pb-4 Investment
+		%p.font-bold.wrap-text
+			Enrolling in the Craft Academy bootcamp is an investment in your future. It is the quickest way to jump-start a career in software development; one of the fastest and most efficient ways to change your life. 
+
+.course-fees
+	.text-center.py-24.paddingx-content
+		%h4.text-grey-dark.pb-6.uppercase Craft Academy
+		%h2.text-orange-ca.pb-6.uppercase Course Fees
+		- future_courses[0..1].each do |course|
+			%h4.text-grey-dark.pb-6.uppercase= course["course"]
+			%h4.font-bold.uppercase.pb-6= [course["price"], 'SEK incl. VAT'].join(' ')
+		.two-columns
+			.left-column
+				%h3.text-orange-ca.pb-6.uppercase Everything included
+				%p.leading-normal.text-left Your course fees include all instruction, materials, and continued support before and after the bootcamp with technical and career assistance. We provide all the necessary tools to develop efficiently - software licenses, a functional and ergonomic work environment. The course fee also includes the Swedish VAT tax of 25%.
+			.right-column
+				%h3.text-orange-ca.pb-6.uppercase Female participants
+				%p.leading-normal.text-left We also proudly offer a 5% discount to female bootcamp participants. Our industry needs more female developers and we want to do everything we can to help women succeed on their coding journey.
+		%p.my-6.text Finances shouldn't stop anyone from fulfilling their dream of becoming a programmer. We encourage everyone to contact us to discuss payment options, including our flexible deposit and payment schedule.
+		%p.text A new cohort starts every eight weeks. Will you start your career as a junior developer with us?
+
+.payment.paddingx-content.py-6.text-center
+	%h3.text-orange-ca.pb-6.uppercase.text-4xl Payment and funding options
+	%p.mb-6.extra-padding The Craft Academy Boot Camp is a private education and thus does not qualify for CSN support. You can choose to pay the education fee according to our standard model or apply for a partial payment. 
+	.standard
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Standard fee
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div.flex-wrap
+				%p At registration
+				%p (registration fee)
+			%div
+				%p At course start
+			%div
+				%p Total (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 9 700 SEK
+			%div
+				%p 87 300 SEK
+			%div
+				%p 97 000 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 11 500 SEK
+			%div
+				%p 103 500 SEK
+			%div
+				%p 115 000 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 12 500 SEK
+			%div
+				%p 112 500 SEK
+			%div
+				%p 125 000 SEK 
+					
+	.discount.mt-6
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Full at registration = 5% discount
+		%p.mb-6 You can choose to pay the full course fee upon admission to any of our programs and receive a 5% discount.
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div
+				%p List price
+			%div
+				%p Discount
+			%div.flex
+				%p Total at registration (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 97 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 92 150 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 115 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 109 250 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 125 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 118 750 SEK 
+					
+	.installments.mt-6
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Interest free installments *
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div.flex-wrap
+				%p At registration
+				%p (registration fee)
+			%div
+				%p At course start
+			%div.flex-wrap
+				%p.px-1 18 monthly
+				%p installments
+				%p (inkl. 75 SEK service fee)
+			%div
+				%p Total (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 9 700 SEK
+			%div
+				%p 29 100 SEK
+			%div
+				%p 3 308 SEK/month
+			%div
+				%p 98 350 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 11 500 SEK
+			%div
+				%p 34 500 SEK
+			%div
+				%p 5 825 SEK/month
+			%div
+				%p 115 900 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 12 500 SEK
+			%div
+				%p 34 500 SEK
+			%div
+				%p 6 325 SEK/month
+			%div
+				%p 125 900 SEK 
+
+
+	%p.text-xs * Interest-free installments are normaly offered to students residing in Sweden and in special cases to EU residents.
+	%p.text-xs Regular credit check will be carried out. Monthly installments include a 75 SEK service fee.
+	%h3.text-orange-ca.pt-10.pb-6.uppercase.text-4xl Female participants
+	.width
+		%p We also offer <strong>another 5%</strong> discount to all female students. (We think that gender inequality sucks, and we want to do whatever we can to help put. You don't like it? Sue us!).
+		%strong Please note:
+		%span The 5% discount offered to female bootcamp participants will be applied on top of the other discounts.
+
+= render partial: 'partials/apply'
