@@ -81,7 +81,7 @@ Then("he should see the curriculum information") do
 end
 
 Then("he should see the prices information") do
-	expect(page).to have_content "Enrolling in the Craft Academy bootcamp is an investment in your future. It is the quickest way to jump-start a career in software development; one of the fastest and most efficient ways to change your life. "
+	expect(page).to have_content "Enrolling in the Craft Academy bootcamp is an investment in your future. It is the quickest way to jump-start a career in software development; one of the fastest and most efficient ways to change your life."
 end
 
 
