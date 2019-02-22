@@ -23,43 +23,144 @@
 
 .payment.paddingx-content.py-6.text-center
 	%h3.text-orange-ca.pb-6.uppercase.text-4xl Payment and funding options
-	%p.mb-6.font-bold The Craft Academy Boot Camp is a private education and thus does not qualify for CSN support. You can choose to pay the education fee according to our standard model or apply for a partial payment. 
-	-# .flex.text-center.border-b-2.bg-orange-ca
-	.prices-grid.bg-orange-ca
-		%div.border-r-2
-			%p Program
-		%div.border-r-2.flex-wrap
-			%p At registration
-			%p (registration fee)
-		%div.border-r-2
-			%p At course start
-		%div.flex
-			%p Total (incl. 25% VAT)
-	.prices-grid
-		%div.text-base.border-r-2
-			%p Full Stack Web Developer
-		%div.border-r-2
-			%p 9 700 SEK
-		%div.border-r-2
-			%p 87 300 SEK
-		%div
-			%p 97 000 SEK
-	.prices-grid
-		%div.text-base.border-r-2
-			%p Enterprise Java Web Application Developer
-		%div.border-r-2
-			%p 11 500 SEK
-		%div.border-r-2
-			%p 103 500 SEK
-		%div
-			%p 115 000 SEK 
-	.prices-grid
-		%div.text-base.border-r-2
-			%p Cyber Security Specialist
-		%div.border-r-2
-			%p 12 500 SEK
-		%div.border-r-2
-			%p 112 500 SEK
-		%div
-			%p 125 000 SEK 
-				
+	%p.mb-6.extra-padding The Craft Academy Boot Camp is a private education and thus does not qualify for CSN support. You can choose to pay the education fee according to our standard model or apply for a partial payment. 
+	.standard
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Standard fee
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div.flex-wrap
+				%p At registration
+				%p (registration fee)
+			%div
+				%p At course start
+			%div
+				%p Total (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 9 700 SEK
+			%div
+				%p 87 300 SEK
+			%div
+				%p 97 000 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 11 500 SEK
+			%div
+				%p 103 500 SEK
+			%div
+				%p 115 000 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 12 500 SEK
+			%div
+				%p 112 500 SEK
+			%div
+				%p 125 000 SEK 
+					
+	.discount.mt-6
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Full at registration = 5% discount
+		%p.mb-6 You can choose to pay the full course fee upon admission to any of our programs and receive a 5% discount.
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div
+				%p List price
+			%div
+				%p Discount
+			%div.flex
+				%p Total at registration (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 97 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 92 150 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 115 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 109 250 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 125 000 SEK
+			%div
+				%p 5%
+			%div
+				%p 118 750 SEK 
+					
+	.installments.mt-6
+		%h3.uppercase.text-4xl.text-orange-ca.pb-6 Interest free installments *
+		.prices-grid.bg-orange-ca.text-white
+			%div
+				%p Program
+			%div.flex-wrap
+				%p At registration
+				%p (registration fee)
+			%div
+				%p At course start
+			%div.flex-wrap
+				%p.px-1 18 monthly
+				%p installments
+				%p (inkl. 75 SEK service fee)
+			%div
+				%p Total (incl. 25% VAT)
+		.prices-grid
+			%div.text-base
+				%p Full Stack Web Developer
+			%div
+				%p 9 700 SEK
+			%div
+				%p 29 100 SEK
+			%div
+				%p 3 308 SEK/month
+			%div
+				%p 98 350 SEK
+		.prices-grid
+			%div.text-base
+				%p Enterprise Java Web Application Developer
+			%div
+				%p 11 500 SEK
+			%div
+				%p 34 500 SEK
+			%div
+				%p 5 825 SEK/month
+			%div
+				%p 115 900 SEK 
+		.prices-grid
+			%div.text-base
+				%p Cyber Security Specialist
+			%div
+				%p 12 500 SEK
+			%div
+				%p 34 500 SEK
+			%div
+				%p 6 325 SEK/month
+			%div
+				%p 125 900 SEK 
+
+
+	%p.text-xs * Interest-free installments are normaly offered to students residing in Sweden and in special cases to EU residents.
+	%p.text-xs Regular credit check will be carried out. Monthly installments include a 75 SEK service fee.
+	%h3.text-orange-ca.pt-10.pb-6.uppercase.text-4xl Female participants
+	.width
+		%p We also offer <strong>another 5%</strong> discount to all female students. (We think that gender inequality sucks, and we want to do whatever we can to help put. You don't like it? Sue us!).
+		%strong Please note:
+		%span The 5% discount offered to female bootcamp participants will be applied on top of the other discounts.
+
+= render partial: 'partials/apply'

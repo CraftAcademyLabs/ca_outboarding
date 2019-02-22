@@ -442,14 +442,48 @@ body {
 }
 
 .payment {
-	.prices-grid {
-		display: grid;
-		grid-template-columns: 40% 20% 20% 20%;
-		grid-template-areas: auto;
-		@apply border-b-2;
+	.extra-padding {
+		@apply px-twenty-five;
+	}
 
-		div {
-			@apply flex justify-center items-center h-24;
+	.standard {
+		@apply m-0 p-0;
+
+		.prices-grid {
+			display: grid;
+			grid-template-columns: 40% 20% 20% 20%;
+			grid-template-areas: auto;
+			@apply border-b-2;
+
+			div {
+				@apply flex justify-center items-center h-24;
+			}
+		}
+	}
+
+	.discount {
+		.prices-grid {
+			display: grid;
+			grid-template-columns: 40% 15% 15% 30%;
+			grid-template-areas: auto;
+			@apply border-b-2;
+
+			div {
+				@apply flex justify-center items-center h-24;
+			}
+		}
+	}
+
+	.installments {
+		.prices-grid {
+			display: grid;
+			grid-template-columns: 25% 15% 15% 25% 20%;
+			grid-template-areas: auto;
+			@apply border-b-2;
+
+			div {
+				@apply flex justify-center items-center h-24;
+			}
 		}
 	}
 }
