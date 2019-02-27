@@ -18,14 +18,21 @@ Devise.setup do |config|
   config.omniauth :linkedin,
                   Rails.application.credentials.linkedin[:client_id],
                   Rails.application.credentials.linkedin[:client_secret],
-                  scope: 'r_basicprofile r_emailaddress'
-
-  config.omniauth :crafted_oauth,
-                  Rails.application.credentials.crafted[:client_id],
-                  Rails.application.credentials.crafted[:client_secret],
-                  Rails.application.credentials.crafted[:domain_url],
-                  scope: 'openid email profile'
-
+									scope: 'r_basicprofile r_emailaddress'
+									
+	if Rails.env.production?
+		config.omniauth :crafted_oauth,
+										Rails.application.credentials.crafted[:production][:client_id],
+										Rails.application.credentials.crafted[:production][:client_secret],
+										Rails.application.credentials.crafted[:production][:domain_url],
+										scope: 'openid email profile'
+	else
+		config.omniauth :crafted_oauth,
+										Rails.application.credentials.crafted[:development][:client_id],
+										Rails.application.credentials.crafted[:development][:client_secret],
+										Rails.application.credentials.crafted[:development][:domain_url],
+										scope: 'openid email profile'
+	end
   config.expire_all_remember_me_on_sign_out = true
 
   config.password_length = 6..128
