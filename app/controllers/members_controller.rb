@@ -2,7 +2,6 @@
 
 class MembersController < ApplicationController
   def index
-    @entries = ['Marketing', 'Marketing', 'Marketing', 'Marketing']
     @members = User.member
   end
 

@@ -16,7 +16,32 @@
     width: 100px;
     background-color: rgb(50, 177, 165) !important;
 }  
-
+.carousel {
+    overflow: hidden;
+    .carousel-item {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        text-align: left;
+        font-size: 0;
+    }
+    img {
+        width: 20%; 
+        float: left;
+    }
+    .carousel-caption {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        left: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
 
 .carousel-control:nth-of-type(1) {
     height: 100px;
@@ -36,15 +61,5 @@
     width: 95px;
 }
 
-.carousel-caption {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    left: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+
 

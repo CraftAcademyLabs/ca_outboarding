@@ -1,10 +1,9 @@
 .carousel
-    - @entries.each_with_index do |entry, index|
-        - image_name = "ca_marketing_#{index + 1}.jpg"
+    - @entries.each_with_index do |entry|
         .carousel-item
-            = image_tag image_name, class: 'faux'
+            = image_tag entry[:image_url]
             .carousel-caption
-                %h1= entry
+                %h1= entry[:marketing_slug]
 / Controls
 %a.carousel-control.prev
     %svg#Layer_1{:style => "enable-background:new 0 0 24 42;", :version => "1.1", :viewbox => "0 0 24 42", :x => "0px", "xml:space" => "preserve", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
