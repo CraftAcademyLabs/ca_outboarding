@@ -17,7 +17,7 @@ Before do
   OmniAuth.config.mock_auth[:crafted_oauth] = OmniAuth::AuthHash.new(OmniAuthFixtures.crafted_oauth_mock)
 end
 
-Chromedriver.set_version '2.36' unless ENV['CI'] == 'true'
+Chromedriver.set_version '2.41' unless ENV['CI'] == 'true'
 
 chrome_options = %w(no-sandbox disable-popup-blocking disable-infobars)
 chrome_options << 'headless' if ENV['CI'] == 'true'
